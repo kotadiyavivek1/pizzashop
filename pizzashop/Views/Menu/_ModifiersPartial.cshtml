@@ -1,0 +1,168 @@
+@using pizzashop_Repository.ViewModel
+@using pizzashop_Services.ImplementationService
+@model List<ModifiersDto>
+@{
+    Layout = null;
+}
+
+<div id="modifierTable" class=""> <!-- Add spacing here -->
+    <div class="row mb-3 align-items-center">
+        <div class="col-md-6">
+            <h4 class="fw-semibold mb-0" style="color: #0b72b5;">Modifiers</h4>
+        </div>
+        <div class="col-md-6">
+            <div class="d-flex justify-content-end align-items-center gap-2 top-controls">
+                <!-- Search Box -->
+                <div class="position-relative search-box" style="flex-grow: 1;">
+                    <i class="bi bi-search position-absolute top-50 start-0 translate-middle-y ms-2 text-muted"></i>
+                    <input type="text" class="form-control ps-4 uniform-height h-auto" placeholder="Search" />
+                </div>
+                @if (PermissionHelper.HasPermission(Context, "Menu", false, false, true))
+                {
+                    <!-- Trash Button -->
+                    <button class="btn btn-outline-secondary uniform-height h-auto" id="TrashButton"
+                        title="Delete Selected">
+                        <i class="bi bi-trash"></i>
+                    </button>
+                }
+                <!-- New Modifier Button -->
+                @if (PermissionHelper.HasPermission(Context, "Menu", false, true, false))
+                {
+                    <button class="btn text-white h-auto d-flex align-items-center gap-1 uniform-height add-items"
+                        style="background-color: #0b72b5;" data-bs-toggle="modal" data-bs-target="#addMenuItemModal"
+                        asp-action="GetItemsForAdd">
+                        <i class="bi bi-plus-lg"></i> <span class="d-none d-md-inline">New Modifier</span>
+                    </button>
+                }
+            </div>
+        </div>
+    </div>
+
+    <div class="responsive-table">
+        <table class="table mb-0">
+            <thead class="fw-bold" style="font-size: 14px; color: #999999;">
+                <tr>
+                    <th style="width: 40px;">
+                        <input type="checkbox" class="form-check-input" id="selectAll" />
+                    </th>
+                    <th>Name</th>
+                    <th style="min-width: 100px;">Unit</th>
+                    <th style="min-width: 100px;">Rate</th>
+                    <th style="min-width: 100px;">Quantity</th>
+                    @if ((Context != null && PermissionHelper.HasPermission(Context, "Menu", false, true, false)) ||
+                                        (Context != null && PermissionHelper.HasPermission(Context, "Menu", false, false, true)))
+                    {
+                        <th style="min-width: 120px;">Action</th>
+                    }
+                </tr>
+            </thead>
+            <tbody style="font-size: 14px; color: #999999;">
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            <input type="checkbox" class="form-check-input checkbox" data-id="@item.id" />
+                        </td>
+                        <td>
+                            <div class="d-flex align-items-center">
+                                <span>@item.name</span>
+                            </div>
+                        </td>
+                        <td>@item.unit</td>
+                        <td>@item.rate</td>
+                        <td>@item.quantity</td>
+                        @if ((Context != null && PermissionHelper.HasPermission(Context, "Menu", false, true, false)) ||
+                                            (Context != null && PermissionHelper.HasPermission(Context, "Menu", false, false, true)))
+                        {
+
+                            <td class="action-buttons">
+                                @if (PermissionHelper.HasPermission(Context, "Menu", false, true, false))
+                                {
+                                    <button class="btn btn-sm p-0 text-primary me-2">
+                                        <i class="bi bi-pencil"></i>
+                                    </button>
+                                }
+                                @if (PermissionHelper.HasPermission(Context, "Menu", false, false, true))
+                                {
+                                    <button class="btn btn-sm p-0 text-danger">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                }
+                            </td>
+                        }
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Pagination Section -->
+    <div class="d-flex justify-content-between align-items-center mt-3 flex-wrap">
+        <div class="d-flex align-items-center gap-2">
+            <span class="text-muted">Items per page</span>
+            <select class="form-select form-select-sm w-auto" id="modifierPageSize">
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5" selected>5</option>
+            </select>
+        </div>
+        <ul class="pagination pagination-sm mb-0 mt-2 mt-md-0">
+            <li class="page-item disabled">
+                <a class="page-link" href="#"><i class="bi bi-chevron-left"></i></a>
+            </li>
+            <li class="page-item disabled">
+                <a class="page-link" href="#"><i class="bi bi-chevron-right"></i></a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+@* <script>
+    $(document).ready(function () {
+        $(document).on("click", ".getItems", function () {
+            var id = $(this).data("modifier-id");
+            console.log(id);
+            LoadItems("/Menu/GetItemsByCategory", id);
+        });
+    });
+    $(document).ready(function () {
+    $("#selectAll").click(function () {
+        let isChecked = $(this).prop("checked");
+        $(".checkbox").prop("checked", isChecked);
+    });
+
+    $(".checkbox").click(function () {
+        if (!$(this).prop("checked")) {
+            $("#selectAll").prop("checked", false);
+        }
+    });
+
+    $("#TrashButton").click(function () {
+        let itemsId = [];
+        $(".checkbox:checked").each(function () {
+            itemsId.push($(this).data("id"));
+        });
+
+        console.log(itemsId);
+
+        if (itemsId.length === 0) {
+            alert("No items selected!");
+            return;
+        }
+
+        $.ajax({
+            url: "/Menu/DeleteSelectModifier",
+            type: "POST",
+            contentType: "application/json",
+            data: JSON.stringify(itemsId),
+            success: function (response) {
+                alert("Items deleted successfully!");
+            },
+            error: function () {
+                alert("Error deleting items.");
+            }
+        });
+    });
+});
+</script>  *@

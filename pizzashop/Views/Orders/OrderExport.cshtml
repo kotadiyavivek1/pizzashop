@@ -1,0 +1,256 @@
+<head>
+    <link rel="stylesheet" href="~/css/MenuPage.css" asp-append-version="true" />
+    <style>
+        .btn-custom {
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        .btn-export {
+            background-color: #0066a7;
+            color: white;
+            border: none;
+        }
+
+        .btn-clear {
+            background-color: white;
+            color: #0066a7;
+            border: 1px solid #0066a7;
+        }
+
+        .form-control,
+        .form-select {
+            height: 36px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content p-3">
+        <div class="row">
+            <div class="col-12 col-md-4  mb-3">
+                <h2 class="blue-color">Orders</h2>
+            </div>
+
+            <div class="col-12 col-md-8">
+                <div class="row g-2">
+                    <div class="col-12 col-sm-6 col-md-3">
+                        <div class="form-floating">
+                            <input type="text" id="searchOrders" class="form-control" placeholder="Search">
+                            <label for="searchOrders">Search Orders</label>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-3">
+                        <div class="form-floating">
+                            <select id="statusFilter" class="form-select">
+                                <option value="All">All Status</option>
+                                <option value="Pending">Pending</option>
+                                <option value="In Progress">In Progress</option>
+                                <option value="Served">Served</option>
+                                <option value="Completed">Completed</option>
+                                <option value="Cancelled">Cancelled</option>
+                                <option value="On Hold">On Hold</option>
+                                <option value="Failed">Failed</option>
+                            </select>
+                            <label for="statusFilter">Status</label>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-3">
+                        <div class="form-floating">
+                            <select id="dateRangeFilter" class="form-select">
+                                <option value="All time">All Time</option>
+                                <option value="Last 7 days">Last 7 Days</option>
+                                <option value="Last 30 days">Last 30 Days</option>
+                                <option value="Current Month">Current Month</option>
+                            </select>
+                            <label for="dateRangeFilter">Date Range</label>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-3">
+                        <button type="button" id="exportBtn" class="btn btn-custom btn-export h-100 w-100">
+                            <i class="bi bi-box-arrow-down"></i> Export
+                        </button>
+                    </div>
+                </div>
+
+                <div class="row mt-2 g-2">
+                    <div class="col-12 col-sm-6 col-md-4">
+                        <div class="form-floating">
+                            <input type="date" id="fromDate" class="form-control" placeholder="From Date">
+                            <label for="fromDate">From Date</label>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-4">
+                        <div class="form-floating">
+                            <input type="date" id="toDate" class="form-control" placeholder="To Date">
+                            <label for="toDate">To Date</label>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-sm-3 col-md-2">
+                        <button type="button" id="searchBtn" class="btn btn-custom btn-export h-100 w-100">
+                            <i class="bi bi-search"></i> Search
+                        </button>
+                    </div>
+
+
+                    <div class="col-6 col-sm-3 col-md-2">
+                        <button type="button" class="btn btn-custom btn-clear h-100 w-100">
+                            <i class="bi bi-x-circle"></i> Clear
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="card-body">
+                <div id="ordersTableContainer">
+
+                </div>
+            </div>
+
+        </div>
+</body>
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#exportBtn').on('click', function () {
+            let searchString = $('#searchOrders').val();
+            let orderStatus = $('#statusFilter').val();
+            let dateRange = $('#dateRangeFilter').val();
+            let exportUrl = `/Orders/ExportToExcel?searchString=${encodeURIComponent(searchString)}&orderStatus=${encodeURIComponent(orderStatus)}&dateRange=${encodeURIComponent(dateRange)}`;
+            window.location.href = exportUrl; 
+        });
+    });
+
+
+    $(document).ready(function () {
+        let currentSortOrder = "";
+        function loadOrders(pageNumber = 1, pageSize = 5, searchString = '', sortOrder = '', dateRange = 'All time', orderStatus = 'All', fromDate = '', toDate = '') {
+            $.ajax({
+                url: '/Orders/FilterOrder',
+                type: 'GET',
+                data: {
+                    pageNumber: pageNumber,
+                    pageSize: pageSize,
+                    searchString: searchString,
+                    sortOrder: sortOrder,
+                    dateRange: dateRange,
+                    orderStatus: orderStatus,
+                    fromDate: fromDate,
+                    toDate: toDate
+                },
+                success: function (response) {
+                    $('#ordersTableContainer').html(response);
+                },
+                error: function () {
+                    toastr.error("Failed to load orders.", "Error");
+                }
+            });
+        }
+
+        function getFilters() {
+            return {
+                pageSize: $('#pageSize').val(),
+                searchString: $('#searchOrders').val(),
+                dateRange: $('#dateRangeFilter').val(),
+                orderStatus: $('#statusFilter').val(),
+                fromDate: $("#fromDate").val(),
+                toDate: $("#toDate").val(),
+                sortOrder: $(".sortable.active").data('sort') || currentSortOrder
+            };
+        }
+
+        $('#searchBtn').on('click', function () {
+            let filters = getFilters();
+            if (filters.fromDate > filters.toDate) {
+                toastr.error("Error: Invalid date range! Please select a valid 'From Date' and 'To Date'.", "Error");
+            }
+            loadOrders(1, filters.pageSize, filters.searchString, filters.sortOrder, filters.dateRange, filters.orderStatus, filters.fromDate, filters.toDate);
+        });
+
+
+        $('#searchOrders').on('input', function () {
+            let filters = getFilters();
+            loadOrders(1, filters.pageSize, filters.searchString, filters.sortOrder, filters.dateRange, filters.orderStatus, filters.fromDate, filters.toDate);
+        });
+
+
+        $('#statusFilter, #dateRangeFilter').on('change', function () {
+            let filters = getFilters();
+            loadOrders(1, filters.pageSize, filters.searchString, filters.sortOrder, filters.dateRange, filters.orderStatus, filters.fromDate, filters.toDate);
+        });
+
+
+        $(document).on('click', '.page-btn', function (e) {
+            e.preventDefault();
+            let page = $(this).data('page');
+            if (page) {
+                let filters = getFilters();
+                loadOrders(page, filters.pageSize, filters.searchString, filters.sortOrder, filters.dateRange, filters.orderStatus, filters.fromDate, filters.toDate);
+            }
+        });
+
+
+
+        $(document).on('click', '.sortable', function (e) {
+            e.preventDefault();
+            let newSortOrder = $(this).data('sort');
+            $('.sortable').removeClass('active');
+            $(this).addClass('active');
+            currentSortOrder = newSortOrder;
+            console.log("Updated Sort Order:", currentSortOrder);
+            let filters = getFilters();
+            loadOrders(1, filters.pageSize, filters.searchString, currentSortOrder, filters.dateRange, filters.orderStatus, filters.fromDate, filters.toDate);
+        });
+
+        $(document).on('change', '#pageSize', function () {
+            debugger
+            let pageSize = $(this).val();
+            $('#pageSize').val(pageSize);
+            let filters = getFilters();
+            filters.pageSize = pageSize;
+            loadOrders(1, filters.pageSize, filters.searchString, filters.sortOrder, filters.dateRange, filters.orderStatus, filters.fromDate, filters.toDate);
+        });
+
+        $(document).on('click', '#prevPage', function () {
+            let prevPage = $(this).data("prevpage");
+            if (prevPage > 0) {
+                let filters = getFilters();
+                loadOrders(prevPage, filters.pageSize, filters.searchString, currentSortOrder, filters.dateRange, filters.orderStatus, filters.fromDate, filters.toDate);
+            }
+        });
+
+        $(document).on('click', '#nextPage', function () {
+            let nextPage = $(this).data("nextpage");
+            let totalPages = $(this).data("totalpages");
+            if (nextPage <= totalPages) {
+                let filters = getFilters();
+                loadOrders(nextPage, filters.pageSize, filters.searchString, currentSortOrder, filters.dateRange, filters.orderStatus, filters.fromDate, filters.toDate);
+            }
+        });
+
+        $('.btn-clear').on('click', function () {
+            $('#searchOrders').val('');
+            $('#statusFilter').val('All');
+            $('#dateRangeFilter').val('All time');
+            $('#fromDate').val('');
+            $('#toDate').val('');
+            loadOrders(1, $('#pageSize').val(), '', '', 'All time', 'All', '', '');
+        });
+        loadOrders();
+    });
+</script>

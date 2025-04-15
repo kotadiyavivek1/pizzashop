@@ -1,0 +1,76 @@
+@using pizzashop_Repository.ViewModel
+@model AddCategory
+
+
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Add Category</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form method="post" asp-action="AddCategory" id="addCategoryForm" asp-controller="Menu">
+            <div class="modal-body">
+                <div class="form-floating">
+                    <input type="text" class="form-control rounded-0" id="CategoryName" asp-for="CategoryName"
+                        placeholder="Category Name">
+                    <label for="CategoryName">Name</label>
+                    <span class="error-message text-danger d-block mb-2"></span>
+                </div>
+                <div class="form-floating mt-3">
+                    <input type="text" class="form-control rounded-0" id="Description" asp-for="Description"
+                        placeholder="Description">
+                    <label for="Description">Description</label>
+                    <span class="error-message text-danger d-block"></span>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" id="submitBtn" class="btn create-user">Save</button>
+                <button type="button" class="btn cancel" data-bs-dismiss="modal">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        function validateField(field, condition, errorMessage) {
+            let errorSpan = $(field).closest(".form-floating").find(".error-message");
+            if (condition) {
+                errorSpan.text(errorMessage).show();
+                $(field).addClass("input-error");
+                return false;
+            } else {
+                errorSpan.text("").hide();
+                $(field).removeClass("input-error");
+                return true;
+            }
+        }
+
+        function validateForm() {
+            let isValid = true;
+            isValid = validateField("#CategoryName", $("#CategoryName").val().trim() === "", "Category Name is required.") && isValid;
+            return isValid;
+        }
+
+        // Real-time validation on keyup (Only for Category Name)
+        $("#CategoryName").on("keyup", function () {
+            validateField(this, $(this).val().trim() === "", "Category Name is required.");
+        });
+
+        // Prevent form submission if validation fails
+        $("#submitBtn").click(function (event) {
+            if (!validateForm()) {
+                event.preventDefault();
+            }
+        });
+
+        $('#addCategoryModal').on('shown.bs.modal', function () {
+            $("#addCategoryForm")[0].reset(); // Reset form fields
+            $(".error-message").text("").hide(); // Hide error messages
+            $(".form-control").removeClass("input-error"); // Remove error styles
+        });
+    });
+</script>

@@ -1,0 +1,175 @@
+@using pizzashop_Repository.ViewModel
+@model FilterPaginationDto<customerDetailsDto>
+<div class="table-responsive mt-4">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name
+                    <a href="#" data-sort="name_asc" class="sortable text-decoration-none">
+                        <i class="bi bi-arrow-up"></i>
+                    </a>
+                    <a href="#" data-sort="name_desc" class="sortable text-decoration-none ms-1">
+                        <i class="bi bi-arrow-down"></i>
+                    </a>
+                </th>
+
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Date
+                    <a href="#" data-sort="date_asc" class="sortable text-decoration-none">
+                        <i class="bi bi-arrow-up"></i>
+                    </a>
+                    <a href="#" data-sort="date_desc" class="sortable text-decoration-none ms-1">
+                        <i class="bi bi-arrow-down"></i>
+                    </a>
+                </th>
+                <th>Total Orders
+                    <a href="#" data-sort="count_asc" class="sortable text-decoration-none">
+                        <i class="bi bi-arrow-up"></i>
+                    </a>
+                    <a href="#" data-sort="count_desc" class="sortable text-decoration-none ms-1">
+                        <i class="bi bi-arrow-down"></i>
+                    </a>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Items)
+            {
+                <tr class="customerRow" data-customer-id="@item.customerId">
+                    <td>
+                        @item.Name
+                    </td>
+                    <td>
+                        @item.Email
+                    </td>
+                    <td>
+                        @item.PhoneNumber
+                    </td>
+                    <td>
+                        @item.Date
+                    </td>
+                    <td>
+                        @item.CountOrders
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<div class="d-flex justify-content-between align-items-center mt-3">
+    <div class="d-flex align-items-center">
+        <span class="me-2">Items per page</span>
+        <select class="form-select form-select-sm" id="pageSize">
+            <option value="5" selected="@(Model.PageSize == 5)">5</option>
+            <option value="10" selected="@(Model.PageSize == 10)">10</option>
+            <option value="15" selected="@(Model.PageSize == 15)">15</option>
+        </select>
+    </div>
+    <ul class="pagination pagination-sm" data-total-pages="@Model.TotalPages">
+        <li class="page-item @(Model.PageNumber <= 1 ? "disabled" : "")">
+            <a class="page-link" href="#" id="prevPage" data-prevpage="@(Model.PageNumber - 1)">
+                <i class="bi bi-chevron-left"></i>
+            </a>
+        </li>
+        <li class="page-item @(Model.PageNumber >= Model.TotalPages ? "disabled" : "")">
+            <a class="page-link" href="#" id="nextPage" data-nextpage="@(Model.PageNumber + 1)"
+                data-totalpages="@Model.TotalPages">
+                <i class="bi bi-chevron-right"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+<div class="modal fade" id="customerHistoryModal" tabindex="-1" aria-labelledby="customerHistoryLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="customerHistoryLabel">Customer History</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="border p-2">
+                            <p><strong>Name:</strong> <span id="customerName"></span></p>
+                            <p><strong>Mobile Number:</strong> <span id="customerMobile"></span></p>
+                            <p><strong>Max Order:</strong> <span id="customerMaxOrder"></span></p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="border p-2">
+                            <p><strong>Average Bill:</strong> <span id="customerAvgBill"></span></p>
+                            <p><strong>Coming Since:</strong> <span id="customerSince"></span></p>
+                            <p><strong>Visits:</strong> <span id="customerVisits"></span></p>
+                        </div>
+                    </div>
+                </div>
+                <table class="table mt-3">
+                    <thead>
+                        <tr>
+                            <th>Order Date</th>
+                            <th>Order Type</th>
+                            <th>Payment</th>
+                            <th>Items</th>
+                            <th>Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody id="customerOrders">
+                        <!-- Order history will be inserted here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $('.customerRow').on('click', function () {
+            var customerId = $(this).data('customer-id'); 
+            loadCustomerHistory(customerId); 
+        });
+    });
+
+    function loadCustomerHistory(customerId) {
+        $.ajax({
+            url: '/Customers/GetCustomerHistory',
+            type: 'GET',
+            data: { customerId: customerId },
+            success: function (data) {
+                console.log(data)
+                if (data) {
+                    $('#customerName').text(data.name);
+                    $('#customerMobile').text(data.mobileNumber);
+                    $('#customerMaxOrder').text(data.maxOrder);
+                    $('#customerAvgBill').text(data.averageBill);
+                    $('#customerSince').text(data.comingSince);
+                    $('#customerVisits').text(data.visits || 'N/A'); 
+
+                    let orderHtml = '';
+                    if (data.orderDetails && data.orderDetails.length > 0) {
+                        data.orderDetails.forEach(order => {
+                            orderHtml += `<tr>
+                            <td>${order.orderDate}</td> 
+                            <td>${order.orderType}</td>
+                            <td>${order.paymentMethod}</td>
+                            <td>${order.items}</td>
+                            <td>${order.amount}</td>
+                        </tr>`;
+                        });
+                    } else {
+                        orderHtml = '<tr><td colspan="5" class="text-center">No orders found</td></tr>';
+                    }
+                    $('#customerOrders').html(orderHtml);
+
+                    $('#customerHistoryModal').modal('show');
+                }
+            },
+            error: function () {
+                alert('Failed to load customer history.');
+            }
+        });
+    }
+</script>

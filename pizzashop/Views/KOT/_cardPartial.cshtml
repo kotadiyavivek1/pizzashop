@@ -1,0 +1,167 @@
+@model List<pizzashop_Repository.ViewModel.KotDto>
+@{
+    string status = @Model.FirstOrDefault()?.Status ?? "";
+}
+
+<style>
+        .cards-scroll-wrapper {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .cards-container {
+            display: flex;
+            transition: transform 0.3s ease-in-out;
+            width: max-content;
+        }
+
+        .card {
+            background: white;
+            border: 2px dashed #ccc;
+            padding: 10px;
+            width: 250px;
+            height: 250px;
+            border-radius: 8px;
+            flex: 0 0 300px;
+            margin: 0 10px;
+            box-sizing: border-box;
+        }
+
+        .card h3 {
+            margin: 0 0 10px 0;
+            color: #0b72b5;
+            font-size: 16px;
+        }
+
+        .card small {
+            display: block;
+            @* margin-bottom: 8px; *@
+            color: #888;
+        }
+
+        .item {
+            padding: 5px 0;
+            border-top: 1px solid #eee;
+        }
+
+        .item:first-child {
+            border-top: none;
+        }
+
+        .instruction {
+            color: #0077cc;
+            
+        }
+        .body-color{
+            background-color: #f2f2f2;
+        }
+</style>
+@foreach(var order in Model){
+<div class="card p-0 shadow bg-body-tertiary rounded kot-card" data-id="@order.OrderId">
+    <div class="d-flex flex-column justify-content-between body-color p-2 w-100 border-bottom">
+        <div class="d-flex justify-content-between ">
+            <h3># @order.OrderId</h3>
+              @{
+                var timeSpan = DateTime.UtcNow - order.CreatedAt;
+            var formattedTime = string.Empty;
+
+            if (timeSpan.TotalDays >= 365)
+            {
+            formattedTime = $"{(int)(timeSpan.TotalDays / 365)} years ago";
+            }
+            else if (timeSpan.TotalDays >= 7)
+            {
+            formattedTime = $"{(int)(timeSpan.TotalDays / 7)} weeks ago";
+            }
+            else if (timeSpan.TotalDays >= 1)
+            {
+            formattedTime = $"{(int)timeSpan.TotalDays} days ago";
+            }
+            else if (timeSpan.TotalHours >= 1)
+            {
+            formattedTime = $"{(int)timeSpan.TotalHours} hours ago";
+            }
+            else
+            {
+            formattedTime = $"{(int)timeSpan.TotalMinutes} minutes ago";
+            }
+        }
+
+            <small><i class="fa-regular fa-clock"></i>@formattedTime</small>
+        </div>
+        <small class="m-0">@order.SectionName • @order.TableName</small>
+    </div>
+    <div  style="overflow-y: auto; min-height: 140px; overflow-x: hidden;">
+         @foreach (var item in order.KotItem)
+        {
+       
+            <div>
+                <div class="item p-2 text-muted">@item.KotItemName<br>
+                    <span style="float: right;">@item.Quantity</span>
+                    @if (item.Modifiers != null && item.Modifiers.Any())
+                    {
+                        <ul class="mb-0 text-muted">
+                            @foreach (var modifier in item.Modifiers)
+                            {
+                                <li style="font-size: 12px;"> @modifier.KotItemModifierName</li>
+                            }
+                        </ul>
+                    }
+                    @if (item.ItemInstruction != null)
+                    {
+                        <span class=" " style="font-size: 14px;"><span
+                                class="instruction" >Instruction:</span> @item.ItemInstruction </span>
+                    }
+                </div>
+            </div>
+
+        }
+    </div>
+     @if (!string.IsNullOrWhiteSpace(order.OrderInstruction))
+    {
+        <div class="body-color card-footer border border-none d-flex justify-content-center" style='height:50px;'>
+            <div class="instruction">- @order.OrderInstruction</div>
+        </div>
+    }
+
+</div>
+}
+
+
+
+<script>
+    $(document).ready(function () {
+        $(".kot-card").click(function () {
+            var orderId = $(this).data("id");
+            console.log(orderId);
+            @* var modal = bootstrap.Modal.getOrCreateInstance(document.getElementById('KOTModalContent'));
+            modal.show(); *@
+            ShowKOTModal(orderId);
+        });
+    });
+
+   
+
+function ShowKOTModal(orderId) {
+    let status = '@status';
+    $.ajax({
+        url: '/KOT/GetKotItemPartial',
+        type: 'GET',
+        data: { orderId: orderId,status:status },
+        success: function (html) {
+            $("body").append(html); // Append modal to body
+            var modalEl = document.getElementById('KOTModal');
+            var modal = new bootstrap.Modal(modalEl);
+            modal.show();
+
+            // Optional: Remove modal from DOM after hide
+            modalEl.addEventListener('hidden.bs.modal', function () {
+                modalEl.remove();
+            });
+        },
+        error: function () {
+            alert("Failed to load KOT details.");
+        }
+    });
+}
+</script>

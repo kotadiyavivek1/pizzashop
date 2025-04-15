@@ -1,0 +1,158 @@
+@using pizzashop_Repository.ViewModel
+@model CategoryModifierDto
+
+<head>
+    <link rel="stylesheet" href="~/css/MenuPage.css" asp-append-version="true" />
+</head>
+
+
+<div class="content" id="content" style="overflow: hidden;">
+    <div class="container-fluid">
+        <!-- Menu Title -->
+        <div class="row mb-2">
+            <div class="col-12">
+                <h4 class="fw-bold" style="color: #0b72b5;">Menu</h4>
+            </div>
+        </div>
+
+        <!-- Tabs: Items / Modifiers -->
+        <div class="row mb-3 bg-white">
+            <div class="col-12 p-0">
+                <ul class="nav nav-tabs" id="menuTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active d-flex align-items-center" id="itemsTabLink" data-bs-toggle="tab"
+                            data-bs-target="#itemsTab" type="button" role="tab" aria-controls="itemsTab"
+                            aria-selected="true">
+                            <i class="bi bi-list me-2"></i> Items
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link d-flex align-items-center" id="modifiersTabLink" data-bs-toggle="tab"
+                            data-bs-target="#modifiersTab" type="button" role="tab" aria-controls="modifiersTab"
+                            aria-selected="false">
+                            <i class="bi bi-grid me-2"></i> Modifiers
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Tab Content -->
+        <div class="tab-content mt-2" id="menuTabsContent">
+            <div class="tab-pane fade show active" id="itemsTab" role="tabpanel" aria-labelledby="itemsTabLink">
+                <div class="row">
+                    @await Html.PartialAsync("MenuPage", @Model)
+                </div>
+            </div>
+            <div class="tab-pane fade" id="modifiersTab" role="tabpanel" aria-labelledby="modifiersTabLink">
+                <div class="row">
+                    @await Html.PartialAsync("ModifierPage", @Model)
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="~/js/jquery-3.6.0.js" asp-append-version="true"></script>
+<script>
+    $(document).ready(function () {
+
+
+
+        @* $('a[data-bs-toggle="tab"], button[data-bs-toggle="tab"]').on('shown.bs.tab', function (e) {
+                // The target pane is set in the data-bs-target attribute or via the href of an <a>
+                var targetSelector = $(e.target).attr('data-bs-target') || $(e.target).attr('href');
+                if (targetSelector) {
+                    // Remove any d-none classes from action-buttons in this tab pane
+                    $(targetSelector).find(".action-buttons").removeClass("d-none");
+                }
+            });
+
+            // Optional: When switching tabs, if needed remove d-none from entire tab pane content
+            $(".tab-pane").removeClass("d-none");
+        }); *@
+
+
+
+            @* $(document).ready(function () {
+            // Remove the 'd-none' class from all elements with the 'action-buttons' class
+            $(".action-buttons").removeClass("d-none");
+        }); *@
+
+
+
+
+
+        let currentCategoryId = null;
+        let currentPage = 1;
+        let currentPageSize = 3;
+        let currentSearch = "";
+
+
+        currentCategoryId = $(".getItems").first().data("category-id");
+        LoadItems(currentCategoryId, currentPage, currentPageSize, currentSearch);
+
+
+        $(document).on("click", ".getItems", function () {
+            currentCategoryId = $(this).data("category-id");
+            currentPage = 1; // reset page
+            LoadItems(currentCategoryId, currentPage, currentPageSize, currentSearch);
+        });
+
+        $(document).on("change", "#pageSize", function () {
+            currentPageSize = $(this).val();
+            currentPage = 1; // reset to first page
+            LoadItems(currentCategoryId, currentPage, currentPageSize, currentSearch);
+        });
+
+        $(document).on("click", "#nextPage", function (e) {
+            e.preventDefault();
+            if (!$(this).closest("li").hasClass("disabled")) {
+                currentPage++;
+                LoadItems(currentCategoryId, currentPage, currentPageSize, currentSearch);
+            }
+        });
+
+        $(document).on("click", "#prevPage", function (e) {
+            e.preventDefault();
+            if (!$(this).closest("li").hasClass("disabled")) {
+                currentPage--;
+                LoadItems(currentCategoryId, currentPage, currentPageSize, currentSearch);
+            }
+        });
+
+        let debounceTimer;
+        $(document).on("keyup", "#searchInput", function () {
+            clearTimeout(debounceTimer);
+            currentSearch = $(this).val();
+            debounceTimer = setTimeout(function () {
+                currentPage = 1;
+                LoadItems(currentCategoryId, currentPage, currentPageSize, currentSearch);
+                console.log(currentSearch);
+            }, 300);
+        });
+
+        function LoadItems(categoryId, pageNumber, pageSize, searchString) {
+            $.ajax({
+                url: "/Menu/GetFilterItems",
+                type: "GET",
+                data: {
+                    categoryId: categoryId,
+                    pageNumber: pageNumber,
+                    pageSize: pageSize,
+                    searchString: searchString
+                },
+                success: function (response) {
+                    $("#itemsTable").html(response);
+                    $("#searchInput").val(currentSearch);
+                },
+                error: function (xhr, status, error) {
+                    console.error("Error loading items:", error);
+                }
+            });
+        }
+    });
+
+</script>

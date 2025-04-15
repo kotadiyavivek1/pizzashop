@@ -1,0 +1,44 @@
+@* @model pizzashop_Repository.ViewModel.CategoryModifierDto
+
+<div class="modal-content">
+    <div class="modal-header">
+        <h5 class="modal-title" id="selectModifierLabel">Select Existing Modifier</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+        <input type="text" class="form-control mb-3" id="modifierSearch" placeholder="Search">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th><input type="checkbox" id="selectAllModifiers"></th>
+                    <th>Name</th>
+                    <th>Unit</th>
+                    <th>Rate</th>
+                    <th>Quantity</th>
+                </tr>
+            </thead>
+            <tbody id="modifierTableBody">
+                <!-- Modifier rows will be dynamically inserted here -->
+            </tbody>
+        </table>
+        <div class="d-flex justify-content-between">
+            <div>
+                Items Per Page:
+                <select id="itemsPerPage" class="form-select d-inline w-auto">
+                    <option value="5" selected>5</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                </select>
+            </div>
+            <div>
+                <span id="paginationInfo"></span>
+                <button id="prevPage" class="btn btn-sm btn-outline-secondary">&lt;</button>
+                <button id="nextPage" class="btn btn-sm btn-outline-secondary">&gt;</button>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button id="addModifiersBtn" class="btn btn-primary">Add</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+    </div>
+</div>   *@

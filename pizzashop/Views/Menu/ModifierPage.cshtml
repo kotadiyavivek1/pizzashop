@@ -1,0 +1,263 @@
+@using pizzashop_Repository.ViewModel
+@using pizzashop_Services.ImplementationService
+@model CategoryModifierDto
+
+<div class="row g-0">
+
+    <!-- Modifier Group Sidebar -->
+    <div class="col-md-3 m-0 p-0" style="background-color: white;">
+        <div class="category-section border-end pe-3">
+
+            <!-- Header -->
+            <div class="d-flex my-3 justify-content-between align-items-center pb-2 mb-3 px-2">
+                <h5 class="mb-0 fw-bold" style="color:#0b72b5">Modifier Group</h5>
+                @if (PermissionHelper.HasPermission(Context, "Menu", true, false, true))
+                {
+                    <button class="btn d-flex justify-content-center align-items-center p-0"
+                        style="width: 28px; height: 28px; background-color: white; color: #0b72b5; border-radius: 6px;"
+                        data-bs-toggle="modal" data-bs-target="#addModifierGroupModal">
+                        <i class="bi bi-plus fs-6"></i>
+                    </button>
+                }
+            </div>
+
+            <!-- Modifier Group List -->
+            <ul class="p-2 overflow-y-auto category-list" style="max-height: 400px;">
+                @if (Model?.modifierGroups?.Any() == true)
+                {
+                    foreach (var item in Model.modifierGroups)
+                    {
+                        <li class="d-flex justify-content-between align-items-center category-item py-2 px-2 rounded-2"
+                            data-id="@item.id" style="cursor: pointer;">
+
+                            <!-- Modifier Group Name -->
+                            <a class="GetModifiers text-decoration-none flex-grow-1 category-name" data-id="@item.id">
+                                @item.ModifiergroupName
+                            </a>
+                            @if ((Context != null && PermissionHelper.HasPermission(Context, "Menu", false, true, false)) ||
+                                                (Context != null && PermissionHelper.HasPermission(Context, "Menu", false, false, true)))
+                            {
+                                <!-- Action Buttons -->
+                                
+                                <div class="modifier-buttons d-flex gap-2">
+                                @if (Context != null && PermissionHelper.HasPermission(Context, "Menu", false, true, false))
+                                {
+                                    <button class="btn btn-sm p-0 border-0 bg-transparent" title="Edit" data-bs-toggle="modal"
+                                        data-bs-target="#@item.id">
+                                        <i class="bi bi-pencil icon-edit"></i>
+                                    </button>
+                                }
+                                @if (Context != null && PermissionHelper.HasPermission(Context, "Menu", false, false, true))
+                                {
+                                    <button class="btn btn-sm p-0 border-0 bg-transparent modifier-delete-btn"
+                                        data-modifier-id="@item.id" title="Delete">
+                                        <i class="bi bi-trash icon-delete"></i>
+                                    </button>
+                                }
+                                </div>
+                            }
+                        </li>
+                    }
+                }
+                else
+                {
+                    <li class="text-muted">No Category Available</li>
+                }
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="col-md-9 m-0 p-2 bg-white" style="min-height: 600px;" id="ModifierTable">
+        @if (@Model != null)
+        {
+            @await Html.PartialAsync("_ModifiersPartial", @Model.modifiers ?? new List<ModifiersDto>())
+        }
+    </div>
+
+</div>
+<div class="modal fade" id="addModifierGroupModal" tabindex="-1" aria-labelledby="addModifierGroupLabel"
+    aria-hidden="true">
+    <div class="modal-dialog custom-modal-modifiergroup modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addModifierGroupLabel">Add Modifier Group</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form id="addModifierForm">
+                <div class="modal-body">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="modifierGroupName" name="ModifiergroupName"
+                            placeholder="Name" required>
+                        <label for="modifierGroupName">Name*</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <textarea class="form-control" id="modifierGroupDescription" name="Description"
+                            style="height: 90px;" placeholder="Description"></textarea>
+                        <label for="modifierGroupDescription">Description</label>
+                    </div>
+                    <div class="mb-3">
+                        <a class="text-primary" id="openExistingModifierModal" style="text-decoration: none;"
+                            data-bs-target="#existingModifierList" data-bs-toggle="modal" data-bs-dismiss="modal">
+                            + Add Existing Modifiers
+                        </a>
+                    </div>
+                    <div class="selected-modifiers-container d-flex" id="selectedModifiers"></div>
+                    <div class="modal-footer d-flex justify-content-end">
+                        <button type="submit" id="saveModifierGroup" class="btn btn-primary px-4">Save</button>
+                        <button type="button" class="btn btn-secondary px-4" data-bs-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="existingModifierList" tabindex="-1" aria-labelledby="selectModifierLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="selectModifierLabel">Select Existing Modifier</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <input type="text" class="form-control mb-3" id="modifierSearch" placeholder="Search">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th><input type="checkbox" id="selectAllModifiers"></th>
+                            <th>Name</th>
+                            <th>Unit</th>
+                            <th>Rate</th>
+                            <th>Quantity</th>
+                        </tr>
+                    </thead>
+                    <tbody id="modifierTableBody">
+                        @foreach (var item in Model?.GetAllModifiers ?? new List<ModifiersDto>())
+                        {
+                            <tr>
+                                <td><input type="checkbox" class="modifier-checkbox" data-id="@item.id"
+                                        data-name="@item.name"></td>
+                                <td data-name="@item.name">@item.name</td>
+                                <td>@item.unit</td>
+                                <td>@item.rate</td>
+                                <td>@item.quantity</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <div class="d-flex justify-content-between">
+                    <div>
+                        Items Per Page:
+                        <select id="itemsPerPage" class="form-select d-inline w-auto">
+                            <option value="5" selected>5</option>
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                        </select>
+                    </div>
+                    <div>
+                        <span id="paginationInfo"></span>
+                        <button id="prevPage" class="btn btn-sm btn-outline-secondary">&lt;</button>
+                        <button id="nextPage" class="btn btn-sm btn-outline-secondary">&gt;</button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="addModifiersBtn" class="btn btn-primary">Add</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+    $(document).ready(function () {
+
+        
+
+        $(".category-item").click(function () {
+            $(".category-item").removeClass("selected");
+            $(".modifier-buttons").addClass("d-none");
+
+            $(this).addClass("selected");
+            $(this).find(".modifier-buttons").removeClass("d-none");
+        });
+        $(document).ready(function () {
+            $('.category-item').on('click', function () {
+                $('.category-item').removeClass('active');
+                $(this).addClass('active');
+            });
+        });
+
+        $(document).on("click", ".GetModifiers", function () {
+            var id = $(this).data("id");
+            if (!id) return;
+            $.ajax({
+                url: "/Menu/GetModifiers",
+                type: "GET",
+                data: { id: id },
+                success: function (response) {
+                    $("#ModifierTable").html(response);
+
+                }
+            });
+        });
+
+        $("#openExistingModifierModal").click(function () {
+            $("#existingModifierList").modal("show");
+        });
+
+
+        $("#addModifiersBtn").click(function () {
+            $("#modifierTableBody .modifier-checkbox:checked").each(function () {
+                let modifierId = $(this).data("id");
+                let modifierName = $(this).closest("tr").find("td:eq(1)").text().trim();
+
+                if ($("#selectedModifiers").find(`[data-id="${modifierId}"]`).length === 0) {
+                    let modifierItem = `<div class="selected-modifier-item" data-id="${modifierId}">
+                        <span>${modifierName}</span>
+                        <button type="button" class="remove-modifier">&times;</button>
+                    </div>`;
+                    $("#selectedModifiers").append(modifierItem);
+                }
+            });
+
+            $("#existingModifierList").modal("hide");
+            $("#addModifierGroupModal").modal("show");
+        });
+
+
+        $(document).on("click", ".remove-modifier", function () {
+            $(this).closest(".selected-modifier-item").remove();
+        });
+
+
+        $("#addModifierForm").submit(function (event) {
+            event.preventDefault();
+            let selectedModifiers = [];
+            $("#selectedModifiers .selected-modifier-item").each(function () {
+                selectedModifiers.push($(this).data("id"));
+            });
+
+            let formData = {
+                ModifiergroupName: $("#modifierGroupName").val(),
+                Description: $("#modifierGroupDescription").val(),
+                SelectedModifiers: selectedModifiers
+            };
+
+            $.ajax({
+                url: "/Menu/AddNewModifier",
+                type: "POST",
+                data: JSON.stringify(formData),
+                contentType: "application/json",
+                success: function () {
+                    alert("Modifier Group added successfully!");
+                    location.reload();
+                }
+            });
+        });
+    });
+</script>

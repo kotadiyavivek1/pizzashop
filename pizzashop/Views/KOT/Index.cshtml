@@ -1,0 +1,143 @@
+@using pizzashop_Repository.ViewModel
+@model KotDto
+@{
+    ViewData["Title"] = "Kot";
+    Layout = "~/Views/Shared/_LayoutOrder.cshtml";
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PIZZASHOP KOT</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="../css/Kot.css">
+
+    <style>
+        @* .container,
+        .container-fluid,
+        .container-lg,
+        .container-md,
+        .container-sm,
+        .container-xl,
+        .container-xxl {
+            --bs-gutter-x: 3.5rem;
+            --bs-gutter-y: 0;
+            width: 100%;
+            padding-right: calc(var(--bs-gutter-x)* .5);
+            padding-left: calc(var(--bs-gutter-x)* .5);
+            margin-right: auto;
+            margin-left: auto;
+        } *@
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="mt-3">
+            <h3 style="color: #0066A7; font-weight: bold;">KOT</h3>
+        </div>
+        <div class="mt-3 tab-menu flex-lg-row flex-md-column flex-sm-column flex-column">
+            <span class="tab active" data-cat="All">All</span>
+            @if (Model.categories != null)
+            {
+                @foreach (var item in @Model.categories)
+                {
+                    <span class="tab" data-cat="@item.Categoryid">@item.CategoryName</span>
+                }
+            }
+        </div>
+        <div class="bg-white mt-3">
+            <div class="status-buttons d-flex ">
+                <div>
+                    <button class="status-btn btn primary" data-status="InProgress">In Progress</button>
+                    <button class="status-btn btn secondary" data-status="Ready">Ready</button>
+                    <button class="secondary scroll-left" style="padding: 6px 12px;">&lt;</button>
+                    <button class="secondary scroll-right" style="padding: 6px 12px;">&gt;</button>
+                </div>
+            </div>
+            <div class="cards-scroll-wrapper">
+                <div class="cards-container py-3" id="cards-container">
+                        
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let cardIndex = 0;
+        let currentStatus = "InProgress";
+        let currentCategory = null;
+
+        function loadCards(index = 0) {
+            cardIndex = index;
+            $.ajax({
+                url: "/KOT/GetAllCards",
+                data: {
+                    currentStatus: currentStatus,
+                    currentCategory: currentCategory,
+                    cardIndex: cardIndex
+                },
+                success: function (response) {
+                    $('#cards-container').html(response);
+                    scrollToCard(cardIndex);
+                },
+                error: function () {
+                    toaster.error("Error loading cards.");
+                }
+            });
+        }
+
+        function scrollToCard(index) {
+            const $card = $('.card').eq(0);
+            if ($card.length === 0) return;
+            const margin = parseInt($card.css('margin-left')) + parseInt($card.css('margin-right')) || 20;
+            const cardWidth = $card.outerWidth() + margin;
+            $('#cards-container').css('transform', 'translateX(-' + index * cardWidth + 'px)');
+        }
+
+        $(document).ready(function () {
+            loadCards(); // Initial load
+
+            $('.scroll-right').click(function () {
+                const totalCards = $('.card').length;
+                if (cardIndex < totalCards - 1) {
+                    cardIndex++;
+                } else {
+                    cardIndex = 0;
+                }
+                loadCards(cardIndex);
+            });
+
+            $('.scroll-left').click(function () {
+                if (cardIndex > 0) {
+                    cardIndex--;
+                } else {
+                    cardIndex = 0;
+                }
+                loadCards(cardIndex);
+            });
+
+            $('.tab').click(function () {
+                $('.tab').removeClass('active');
+                $(this).addClass('active');
+                const selectedCategory = $(this).data('cat');
+                currentCategory = selectedCategory === "All" ? null : selectedCategory;
+                cardIndex = 0;
+                loadCards();
+            });
+
+            $('.status-buttons .status-btn').click(function () {
+                currentStatus = $(this).data('status');
+                $('.status-btn').removeClass('primary').addClass('secondary');
+                $(this).removeClass('secondary').addClass('primary');
+                cardIndex = 0;
+                loadCards();
+            });
+        });
+    </script>
+</body>
+
+</html>

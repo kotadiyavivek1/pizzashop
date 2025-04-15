@@ -1,0 +1,214 @@
+@model pizzashop_Repository.ViewModel.KotDto
+@{
+    string status = ViewData["status"]?.ToString() ?? ""; 
+}
+
+<style>
+    .secondary {
+        background: white;
+        color: #0066A7;
+        font-weight: bold;
+        border: 2px solid;
+    }
+
+    .primary {
+        background: #0066A7;
+    }
+</style>
+
+
+<div class="modal fade" id="KOTModal" tabindex="-1" aria-labelledby="kotModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable  modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="kotModalLabel">Order ID: #@Model.OrderId</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form method="post" id="KOTModalForm">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr class="border-bottom">
+                                    <th class="text-muted">Item</th>
+                                    <th class="text-muted text-end">Quantity</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if (Model.KotItem != null)
+                                {
+                                    foreach (var item in Model.KotItem)
+                                    {
+                                        <tr class="border-bottom">
+                                            <td class="text-muted">
+                                                <div>
+
+                                                    <input type="checkbox" class="form-check-input checkboxforReadyItems" />
+                                                    @item.KotItemName
+
+                                                    @if (item.Modifiers?.Any() == true)
+                                                    {
+                                                        <ul class="mb-0 text-muted ps-3">
+                                                            @foreach (var modifier in item.Modifiers)
+                                                            {
+                                                                <li class="ms-3" style="font-size: 12px;">@modifier.KotItemModifierName</li>
+                                                            }
+                                                        </ul>
+                                                    }
+                                                </div>
+
+                                            </td>
+                                            <td class="text-end">
+                                                <div class="d-flex justify-content-end align-items-center gap-2">
+                                                    <button type="button" class="btn btn-sm btn-outline-secondary minus-btn">
+                                                        <i class="fa-solid fa-minus"></i>
+                                                    </button>
+                                                    
+                                                    @{
+                                                        int maxquantity = @item.Quantity - @item.ReadyItemQuantity;
+                                                    }
+                                                      @if(status == "InProgress")
+                                                    {
+                                                        <span class="quantity" id="@item.OrderedItemId"
+                                                           data-value="1"
+                                                            data-max="@maxquantity">1</span>
+                                                    }
+                                                    else
+                                                    {
+                                                        <span class="quantity" id="@item.OrderedItemId"
+                                                           data-value="@item.ReadyItemQuantity"
+                                                            data-max="@item.ReadyItemQuantity">@item.ReadyItemQuantity</span>
+                                                    }
+                                                    <button type="button" class="btn btn-sm btn-outline-secondary plus-btn">
+                                                        <i class="fa-solid fa-plus"></i>
+                                                    </button>                                                    
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                    <input type="hidden" id="SelectedItemsInput" name="SelectedItemsJSON" />
+                    <div class="text-end mt-3">
+                        @if(status == "InProgress")
+                        {
+                            <button type="submit" class="btn primary Inprocess">Mark as Prepared</button>
+                        }
+                        else
+                        {
+                            <button type="submit" class="btn primary Inprocess">Mark as InProgress</button>
+                        }
+                        <button type="button" class="btn secondary" data-bs-dismiss="modal">Cancel</button>
+                    </div
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        let status = '@status' 
+        updateButtonStates();
+
+        $(document).on('click', '.plus-btn', function ()
+        {
+            const $row = $(this).closest('tr');
+            const $qtyEl = $row.find('.quantity');
+            const $checkbox = $row.find('.checkboxforReadyItems');
+            let currentVal = parseInt($qtyEl.attr('data-value')) || 0;
+            const maxVal = parseInt($qtyEl.attr('data-max')) || 0;
+            console.log(maxVal)
+            if (currentVal < maxVal) {
+                currentVal++;
+                $qtyEl.text(currentVal).attr('data-value', currentVal);
+                $checkbox.prop('checked', true); 
+            }
+            updateButtonStates();
+        });
+
+        $(document).on('click', '.minus-btn', function () 
+        {
+            const $row = $(this).closest('tr');
+            const $qtyEl = $row.find('.quantity');
+            const $checkbox = $row.find('.checkboxforReadyItems');
+            let currentVal = parseInt($qtyEl.attr('data-value')) || 1;
+
+            if (currentVal > 1) {
+                currentVal--;
+                $qtyEl.text(currentVal).attr('data-value', currentVal);
+                $checkbox.prop('checked', true); 
+            }
+            updateButtonStates();
+        });
+
+
+        $(document).on('change', '.checkboxforReadyItems', updateButtonStates);
+
+        $('#KOTModalForm').on('submit', function (e) {
+            e.preventDefault();
+            const KotItemUpdateDto = [];
+
+            $('.checkboxforReadyItems:checked').each(function () {
+                const $row = $(this).closest('tr');
+                const orderedItemId = $row.find('.quantity').attr('id');
+                const quantity = parseInt($row.find('.quantity').attr('data-value')) || 1;
+                const maxVal = parseInt($row.find('.quantity').attr('data-max')) || 0;
+                if (quantity > maxVal) {
+                    alert("Quantity cannot exceed available items.");
+                    return false;
+                }
+
+                KotItemUpdateDto.push({
+                    OrderedItemId: orderedItemId,
+                    Quantity: quantity
+                });
+ 
+            });
+
+            if (KotItemUpdateDto.length === 0) {
+                alert("Please select at least one item.");
+                return;
+            }
+            $.ajax({
+                type: 'POST',
+                url: '/KOT/UpdateReadyItems',
+                data: 
+                {
+                    KotItemUpdateDto : KotItemUpdateDto,
+                    status: status
+                },
+                success: function (response) {
+                    alert("Items updated successfully.");
+                    $('#KOTModal').modal('hide');
+                    location.reload();
+                },
+                error: function (xhr) {
+                    toastr.error("Something went wrong.");
+                    console.error(xhr.responseText);
+                }
+            });
+
+            
+        });
+
+        function updateButtonStates() {
+            $('.checkboxforReadyItems').each(function () {
+                const $checkbox = $(this);
+                const $row = $checkbox.closest('tr');
+                const $qtyEl = $row.find('.quantity');
+                const currentVal = parseInt($qtyEl.attr('data-value')) || 0;
+                const maxVal = parseInt($qtyEl.attr('data-max')) || 0;
+
+                if ($checkbox.is(':checked')) {
+                    $row.find('.plus-btn').prop('disabled', currentVal >= maxVal);
+                    $row.find('.minus-btn').prop('disabled', currentVal <= 1);
+                } else {
+                    $row.find('.plus-btn, .minus-btn').prop('disabled', true);
+                }
+            });
+        }
+    });
+</script>

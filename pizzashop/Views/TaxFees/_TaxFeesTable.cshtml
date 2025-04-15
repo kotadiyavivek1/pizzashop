@@ -1,0 +1,427 @@
+@using pizzashop_Repository.ViewModel
+@model FilterPaginationDto<TaxFeesDto>
+<div id="TaxFeesTable">
+    <div class="table-responsive mt-4">
+        <table class="table  align-middle">
+            <thead class="bg-white">
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th class="text-center">Enabled</th>
+                    <th class="text-center">Default</th>
+                    <th>Value</th>
+                    <th class="text-center">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model?.Items != null && Model.Items.Any())
+                {
+                    @foreach (var item in Model.Items)
+                    {
+                        <tr>
+                            <td class="fw-semibold">@item.Name</td>
+                            <td>
+                                <span class="fw-medium">
+                                    @(item.Type ? "Percentage" : "Flat Amount")
+                                </span>
+                            </td>
+                            <td class="text-center">
+                                <div class="form-check form-switch d-inline-block">
+                                    <input class="form-check-input" type="checkbox" @(item.IsEnabled ? "checked" : "")>
+                                </div>
+                            </td>
+                            <td class="text-center">
+                                <div class="form-check form-switch d-inline-block">
+                                    <input class="form-check-input" type="checkbox" @(item.IsDefault ? "checked" : "")>
+                                </div>
+                            </td>
+                            <td>
+                                @if (item.Type)
+                                {
+                                    <span class="fw-bold">@item.Percentage %</span>
+                                }
+                                else
+                                {
+                                    <span class="fw-bold">@item.TaxValue</span>
+                                }
+                            </td>
+                            <td class="text-center">
+                                <button class="btn btn-sm  me-1 editTaxBtn" data-tax-id="@item.Id" data-bs-toggle="modal"
+                                    data-bs-target="#editTaxModal">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+                                <button class="btn btn-sm  delete-tax" data-id="@item.Id" data-bs-toggle="modal"
+                                    data-bs-target="#deleteModal">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="6" class="text-center text-muted">No tax or fee records found.</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Pagination and Page Size Controls -->
+    <div class="d-flex justify-content-between align-items-center mt-3">
+        <div class="d-flex align-items-center">
+            <label for="pageSize" class="me-2 text-black fw-medium">Items Per Page:</label>
+            <select class="form-select form-select-sm w-auto" id="pageSize">
+                <option value="5" selected="@(Model?.PageSize == 5 ? "selected" : null)">5</option>
+                <option value="10" selected="@(Model?.PageSize == 10 ? "selected" : null)">10</option>
+                <option value="15" selected="@(Model?.PageSize == 15 ? "selected" : null)">15</option>
+            </select>
+        </div>
+
+        <ul class="pagination pagination-sm mb-0">
+            <li class="page-item @(Model?.PageNumber <= 1 ? "disabled" : "")">
+                <a class="page-link text-black" id="prevPage"><i class="bi bi-chevron-left"></i></a>
+            </li>
+            <li class="page-item disabled">
+                <span class="page-link text-black">@Model?.PageNumber of @Model?.TotalPages</span>
+            </li>
+            <li class="page-item @(Model?.PageNumber >= Model?.TotalPages ? "disabled" : "")">
+                <a class="page-link text-black" id="nextPage"><i class="bi bi-chevron-right"></i></a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">Confirm Delete</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to delete this Table?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-danger" id="confirmDeleteTax">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="editTaxModal" tabindex="-1" aria-labelledby="editTaxModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h5 class="modal-title" id="editTaxModalLabel">Edit Tax</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <!-- Modal Body -->
+            <div class="modal-body">
+                <form id="taxForm" method="post" action="addTaxFees">
+                    <!-- Hidden ID field -->
+                    <input type="hidden" asp-for="Item.Id" />
+
+                    <!-- Tax Name with Floating Label -->
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" asp-for="Item.Name" id="taxName"
+                            placeholder="Enter tax name">
+                        <label for="taxName">Tax Name</label>
+                        <span asp-validation-for="Item.Name" class="text-danger"></span>
+                    </div>
+
+                    <!-- Tax Type and Value with Floating Labels -->
+                    <div class="row g-2 mb-3">
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <select id="Type" class="form-select" asp-for="Item.Type">
+                                    <option value="" hidden>Select Tax Type</option>
+                                    <option value="true">Percentage</option>
+                                    <option value="false">Flat Item</option>
+                                </select>
+                                <label for="Type">Type*</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="number" class="form-control" asp-for="Item.TaxValue" id="Rate"
+                                    placeholder="Enter tax value">
+                                <label for="Rate">Tax Value*</label>
+                                <span asp-validation-for="Item.TaxValue" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Toggle Switches -->
+                    <div class="row mb-3 mt-4">
+                        <div class="col-6">
+                            <div class="form-check form-switch">
+                                <input type="hidden" name="Item.Id" asp-for="Item.Id" />
+                                <input asp-for="Item.IsEnabled" class="form-check-input" type="checkbox" id="available">
+                                <label class="form-check-label" for="available">Enabled</label>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-check form-switch">
+                                <input type="hidden" name="IsDefault" value="false" />
+                                <input asp-for="Item.IsDefault" class="form-check-input" type="checkbox"
+                                    id="defaultTax">
+                                <label class="form-check-label" for="defaultTax">Default</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal Footer with Buttons -->
+                    <div class="modal-footer border-top-0 pt-3">
+                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" id="addTax" class="btn btn-primary">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        let id = 0;
+
+        $(".delete-tax").click(function () {
+            id = $(this).data("id");
+            console.log("Selected ID:", id);
+        });
+
+        $("#confirmDeleteTax").click(function () {
+            $.ajax({
+                url: '/TaxFees/DeleteTaxFees',
+                type: 'Post',
+                data: { id: id },
+                success: function (data) {
+                    console.log("Delete Response:", data);
+                    $('#deleteModal').modal('hide'); // Correct modal ID
+                    loadPage(@Model?.PageNumber, $('#pageSize').val(), $('#searchBox').val());
+                },
+                error: function (error) {
+                    console.log("Error deleting tax:", error);
+                }
+            });
+        });
+
+        let debounceTimer;
+        let currentPage = @(@Model?.PageNumber ?? 1);
+        let totalPages = @(@Model?.TotalPages ?? 1);
+
+        function loadPage(pageNumber, pageSize, searchString) {
+            if (pageNumber < 1 || pageNumber > totalPages) return;
+
+            $.ajax({
+                url: '/TaxFees/FilterTaxes',
+                type: 'GET',
+                data: { pageNumber: pageNumber, pageSize: pageSize, searchString: searchString },
+                success: function (data) {
+                    $('#TaxFeesTable').html(data);
+                    currentPage = pageNumber;
+                    updatePaginationButtons();
+                },
+                error: function (error) {
+                    console.log("Error loading taxes:", error);
+                }
+            });
+        }
+
+        function updatePaginationButtons() {
+            $('#prevPage').prop('disabled', currentPage <= 1);
+            $('#nextPage').prop('disabled', currentPage >= totalPages);
+        }
+
+        $('#prevPage').click(function (e) {
+            e.preventDefault();
+            if (currentPage > 1) {
+                loadPage(currentPage - 1, $('#pageSize').val(), $('#searchBox').val());
+            }
+        });
+
+        $('#nextPage').click(function (e) {
+            e.preventDefault();
+            if (currentPage < totalPages) {
+                loadPage(currentPage + 1, $('#pageSize').val(), $('#searchBox').val());
+            }
+        });
+
+        $('#pageSize').change(function () {
+            loadPage(1, $(this).val(), $('#searchBox').val());
+        });
+
+        $('#searchBox').on('input', function () {
+            clearTimeout(debounceTimer);
+
+            let searchValue = $(this).val();
+            let pageSize = $('#pageSize').val();
+
+            debounceTimer = setTimeout(function () {
+                loadPage(1, pageSize, searchValue);
+            }, 300);
+        });
+
+
+        function fetchItemDetails(taxId) {
+            console.log("Fetching details for Tax ID:", taxId);
+
+            $.ajax({
+                url: '/TaxFees/GetTaxDetail',
+                type: 'GET',
+                data: { taxId: taxId },
+                success: function (response) {
+                    console.log("Response received:", response);
+
+                    if (response) {
+                        $("#taxName").val(response.name);
+                        $("#Type").val(response.type.toString());
+                        $("#Rate").val(response.taxValue);
+                        $("#available").prop("checked", response.isEnabled);
+                        $("#defaultTax").prop("checked", response.isDefault);
+                        $("#taxForm input[name='Item.Id']").val(response.id);
+                        $("#editTaxModal").modal('show');
+                    }
+                },
+                error: function (xhr, status, error) {
+                    console.error("Error fetching tax details:", status, error);
+                    alert("Failed to fetch item details. Please try again.");
+                }
+            });
+        }
+
+
+
+        // Open Edit Modal and Fetch Data
+        $(".editTaxBtn").click(function () {
+            const taxId = $(this).data("tax-id");
+            fetchItemDetails(taxId);
+        });
+
+        // Fetch Tax Details
+        function fetchItemDetails(taxId) {
+            $.ajax({
+                url: '/TaxFees/GetTaxDetail',
+                type: 'GET',
+                data: { taxId: taxId },
+                success: function (response) {
+                    if (response) {
+                        $("#taxName").val(response.name);
+                        $("#Type").val(response.type.toString());
+                        $("#Rate").val(response.taxValue);
+                        $("#available").prop("checked", response.isEnabled);
+                        $("#defaultTax").prop("checked", response.isDefault);
+                        $("#taxForm input[name='Item.Id']").val(response.id);
+
+                        clearEditTaxErrors();
+                        $('#editTaxModal').modal('show');
+                    }
+                },
+                error: function () {
+                    toastr.error("Failed to fetch tax details.");
+                }
+            });
+        }
+
+        // Form Submission with Validation
+        $(document).ready(function () {  // Add this if it's missing in your original code
+            $("#taxForm").submit(function (e) {
+                e.preventDefault();
+
+                clearEditTaxErrors();
+                let isValid = true;
+
+                // Validate Fields
+                if ($("#taxName").val().trim() === "") {
+                    showError("taxName", "Tax Name is required.");
+                    isValid = false;
+                }
+
+                if (!$("#Type").val()) {
+                   
+                    showError("Type", "Please select a tax type.");
+                    isValid = false;
+                }
+
+                const taxValue = $("#Rate").val().trim();
+                if (taxValue === "" || isNaN(taxValue) || parseFloat(taxValue) < 0) {
+                   
+                    showError("Rate", "Please enter a valid tax value.");
+                    isValid = false;
+                }
+
+                if (!isValid) return;
+
+                // Add loading spinner
+                const btn = $("#addTax");
+                const originalText = btn.html();
+                btn.prop("disabled", true).html(`<span class="spinner-border spinner-border-sm me-1"></span>Saving`);
+
+                const formData = $(this).serialize();
+
+                $.ajax({
+                    url: '/TaxFees/UpdateTax',
+                    type: 'POST',
+                    data: formData,
+                    success: function (response) {
+                        btn.prop("disabled", false).html(originalText);
+
+                        if (response.success) {
+                            $('#editTaxModal').modal('hide');
+                            $("#taxForm")[0].reset();
+                            loadPage(currentPage, $('#pageSize').val(), $('#searchBox').val());
+                            toastr.success("Tax updated successfully!");
+                        } else if (response.errors) {
+                            response.errors.forEach(err => {
+                                const fieldId = getClientFieldId(err.field);
+                                if (fieldId) {  // Make sure fieldId is not empty
+                                    showError(fieldId, err.errors.join(', '));
+                                   
+                                } else {
+                                    // Handle error fields that don't match known fields
+                                    toastr.error(err.errors.join(', '));
+                                }
+                            });
+                        } else {
+                            toastr.error(response.message || "Failed to update tax.");
+                        }
+                    },
+                    error: function (xhr) {
+                        btn.prop("disabled", false).html(originalText);
+                        toastr.error("Server error occurred.");
+                        console.error("Update error:", xhr.responseText);
+                    }
+                });
+            });
+
+            function showError(id, message) {
+                // Debug to see if this function is called
+                console.log("Showing error for", id, message);
+                $(`#${id}`).siblings("span.text-danger").text(message);
+            }
+
+            function clearEditTaxErrors() {
+               
+                $("#editTaxModal .text-danger").text('');
+            }
+
+            function getClientFieldId(fieldName) {
+                switch (fieldName.toLowerCase()) {
+                    case "item.name": return "taxName";
+                    case "item.type": return "Type";
+                    case "item.taxvalue": return "Rate";
+                    default: return "";
+                }
+            }
+
+            $("#taxName, #Type, #Rate").on("keyup change", function () {
+                $(this).siblings("span.text-danger").text('');
+            });
+        });  // Added closing bracket for document ready
+    });
+</script>

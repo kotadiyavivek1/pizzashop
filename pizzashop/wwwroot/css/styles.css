@@ -1,0 +1,436 @@
+.dominos_background {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    overflow-y: hidden;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #f5f7fa;
+}
+
+.Pizzashop-container {
+    background-color: #f5f7fa;
+}
+
+.navbar {
+    height: 50px;
+    width: 100%;
+    background-color: #0066A7 !important;
+    padding: 3px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color: white;
+    transition: all 0.3s ease-in-out;
+    z-index: 2000;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+.sidebar > ul > li {
+    margin-left: 20px;
+    position: relative;
+}
+
+.sidebar > ul > li:hover::before,
+.sidebar > ul > li.active::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background-color: #0066A7;
+}
+
+.nav-item {
+    transition: all 0.2s ease;
+}
+
+.nav-item:hover .nav-link, 
+.nav-item.active .nav-link {
+    color: #0066A7 !important;
+    font-weight: 500;
+}
+
+.nav-link {
+    color: #4A4A4A !important;
+    transition: all 0.2s ease;
+}
+
+.nav-link i, 
+.nav-link img {
+    opacity: 0.7;
+    transition: all 0.2s ease;
+}
+
+.nav-item:hover .nav-link i, 
+.nav-item:hover .nav-link img,
+.nav-item.active .nav-link i, 
+.nav-item.active .nav-link img {
+    opacity: 1;
+}
+
+.navbar-brand {
+    padding: 15px 15px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 5px;
+}
+
+.navbar-brand img {
+    width: 60px;
+    height: 60px;
+}
+
+.navbar-brand h3 {
+    color: #0066A7;
+    font-size: 1.8rem;
+    margin: 0;
+    font-weight: 700;
+    text-align: center;
+}
+
+
+.homepage {
+    width: 60%;
+}
+
+@media (max-width: 1000px) {
+    .sidebar {
+        position: fixed;
+        top: 50px;
+        left: 0;
+        height: 100%;
+        width: 275px;
+        transform: translateX(-100%) !important;
+        transition: transform 0.3s ease-in-out;
+        z-index: 1000;
+    }
+    .sidebar.open {
+        transform: translateX(0%) !important;
+    }
+    .content {
+        margin-left: 0;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .dropdown-menu {
+        position: absolute;
+        top: 43px;
+        border: none !important;
+        box-shadow: none !important;
+    }
+
+    .homepage {
+        width: 80%;
+    }
+}
+
+@media (max-width: 425px) {
+    .dominos_background {
+        display: none;
+    }
+
+    .pizzashop_container {
+        width: 100%;
+        height: 100vh !important;
+    }
+
+    .homepage {
+        width: 100%;
+    }
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+    height: 57px;
+    outline: none;
+    border: 1px solid #ccc;
+    box-shadow: none;
+    width: 100%;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+select:focus {
+    outline: none;
+    box-shadow: none;
+    border-color: #0066A7 !important;
+}
+
+button {
+    height: 45px;
+    width: fit-content;
+}
+
+button:focus {
+    outline: none;
+    box-shadow: none;
+    border: none;
+}
+
+select {
+    outline: none !important;
+    box-shadow: none !important;
+    border: 1px solid #ccc !important;
+    height: 45px !important;
+    appearance: none;
+}
+
+select:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    border-color: #0066A7 !important;
+}
+
+.create-user {
+    color: white !important;
+    background-color: #0066A7 !important;
+    border: 1px solid #0066A7 !important;
+}
+
+.create-user:hover {
+    color: #007bff !important;
+    background-color: white !important;
+}
+
+.cancel {
+    color: #007bff !important;
+    background-color: white !important;
+    border: 1px solid #0066A7 !important;
+}
+
+.cancel:hover {
+    background-color: #0066A7 !important;
+    color: white !important;
+}
+
+.Active {
+    height: 30px;
+    width: 75px;
+    background-color: green;
+    border: none;
+    color: white;
+    border-radius: 5px;
+}
+
+#FileInput {
+    display: none;
+}
+
+#cloudButton {
+    border: 1px solid #ccc;
+    height: 58px;
+}
+
+.custom-tabs {
+    border-bottom: 1px solid #ddd;
+}
+
+.custom-tabs .nav-link {
+    color: #555;
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border: none;
+}
+
+.custom-tabs .nav-link.active {
+    font-weight: bold;
+    color: #007bff;
+    border-bottom: 3px solid #007bff !important;
+    background: none;
+}
+
+.custom-tabs .nav-link i {
+    font-size: 16px;
+}
+
+.table img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+th, td {
+    text-align: center;
+}
+
+.toggle-switch {
+    cursor: pointer;
+}
+
+.nav-tabs .nav-link.active {
+    font-weight: bold;
+    color: #007bff;
+    border-bottom: 3px solid #007bff !important;
+    background: none;
+}
+
+.category-list {
+    height: 300px;
+    overflow-y: scroll;
+}
+
+.category-list li {
+    padding: 5px 10px;
+    cursor: pointer;
+    list-style: none !important;
+}
+
+.category-list li:hover {
+    background: #f8f9fa;
+}
+
+.Menu-item-table {
+    width: 100%;
+}
+
+.changePassword {
+    width: 500px;
+}
+
+.add-user {
+    height: 100%;
+    width: 150px;
+}
+
+#toast-container > .toast-success {
+    background-color: #28a745 !important; 
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.toast {
+    opacity: 0;
+    animation: fadeInToast 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeInToast {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Form container specific styles */
+.form-container {
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin: 15px;
+}
+
+.form-header {
+    color: #0066A7;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-control {
+    height: 45px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.form-control:focus {
+    border-color: #0066A7;
+    outline: none;
+    box-shadow: none;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 20px !important;
+}
+
+.error-message {
+    display: block;
+    font-size: 12px;
+    position: absolute;
+    left: 0;
+    bottom: -20px;
+    color: #dc3545;
+}
+
+.input-error {
+    border-color: #dc3545 !important;
+    
+}
+
+
+.form-floating > .form-select {
+    height: 45px;
+}
+
+.form-label {
+    color: #4A4A4A;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+#cloudButton {
+    background-color: white;
+    border: 1px dashed #ccc;
+    padding: 20px;
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    height: auto;
+}
+
+#cloudButton:hover {
+    border-color: #0066A7;
+    background-color: #f8f9fa;
+}
+
+#fileLabel {
+    color: #4A4A4A;
+    margin-top: 10px;
+    display: block;
+}
+
+.form-group label {
+    color: #4A4A4A;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+#userUpdateForm{
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 15px;
+}

@@ -1,0 +1,210 @@
+    @{
+        ViewData["Title"] = "Table";
+        Layout = "~/Views/Shared/_LayoutOrder.cshtml";
+    }
+
+    <head>
+        <style>
+            .dot {
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                display: inline-block;
+            }
+
+            .accordion-header {
+                border-bottom: 1px solid #ddd;
+            }
+
+            .bg-light-blue {
+                background-color: #e7f3ff !important;
+            }
+
+            .bg-light-green {
+                background-color: #efffed !important;
+            }
+
+            .card {
+                border: 2px solid #e0e0e0;
+                border-radius: 8px;
+            }
+
+            .navbar {
+                background-color: #0066A7;
+            }
+
+            .status-indicators {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            .waiting-token-btn {
+                min-width: 140px;
+                height: 38px;
+                white-space: nowrap;
+            }
+
+            @@media (max-width: 768px) {
+                .accordion-header-content {
+                    flex-direction: column;
+                    align-items: flex-start !important;
+                }
+
+                .status-indicators {
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                }
+
+                .waiting-token-btn {
+                    width: 100%;
+                }
+            }
+
+            .table-container {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+
+            .orderStarted {
+                background: #8cc0e5;
+                border: 3px solid #0066A7 !important;
+            }
+
+            .table-card {
+                width:300px;
+                height: 200px;
+                justify-content: space-between;
+                position: relative;
+            }
+
+            @@media (max-width: 576px) {
+                .table-card {
+                    width: 100%;
+                }
+            }
+        </style>
+    </head>
+
+    <body class="bg-light">
+
+
+        <div class="container-fluid mt-4">
+            <h2 class="mb-4 fw-bold" style="color: #0066A7;">Table View</h2>
+
+            <div class="accordion" id="floorAccordion">
+                <div class="accordion-item border-0 mb-3">
+                    <div class="accordion-header d-flex align-items-center justify-content-between px-3 py-2 bg-white border rounded" style="border: none !important;">
+                        <div class="d-flex align-items-center">
+                            <button class="btn btn-link text-decoration-none p-0 me-2" data-bs-toggle="collapse"
+                                data-bs-target="#floor1" aria-expanded="true" aria-controls="floor1">
+                                <i class="fas fa-chevron-right" style="color:#0066A7;"></i>
+                            </button>
+                            <h5 class="mb-0  fw-bold" style="color: #0066A7;">Ground Floor</h5>
+                        </div>
+                        <div class="accordion-header-content d-flex align-items-center gap-3">
+                            <div class="status-indicators">
+                                <div class="d-flex align-items-center gap-1">
+                                    <span class="dot" style="background-color: #d2cec6;"></span> <small>2</small>
+                                </div>
+                                <div class="d-flex align-items-center gap-1">
+                                    <span class="dot" style="background-color: #7fc83c;"></span> <small>1</small>
+                                </div>
+                                <div class="d-flex align-items-center gap-1">
+                                    <span class="dot" style="background-color: #8cc0e5;"></span> <small>1</small>
+                                </div>
+                            </div>
+                            <button class="btn py-1 px-3 waiting-token-btn"
+                                style="color: #0066A7; border: 2px solid #0066A7; font-weight: bold;">+ Waiting
+                                Token</button>
+                        </div>
+                    </div>
+
+                    <div id="floor1" class="accordion-collapse collapse show mb-2">
+                        <div class="accordion-body p-3">
+                            <div class="table-container">
+                                <div class="card  p-2 shadow-sm orderStarted table-card">
+                                    <div class="d-flex justify-content-between">
+                                        <strong class="text-primary" style="color: #0066A7;">T1</strong>
+                                        <small class="text-muted">₹0</small>
+                                    </div>
+                                    <div class="d-flex justify-content-between mt-4">
+                                        <span><i class="fas fa-user me-1"></i> 2</span>
+                                        <span><i class="fas fa-clock me-1"></i> 10m</span>
+                                    </div>
+                                </div>
+
+                                <div class="card border-success bg-light-green p-2 shadow-sm table-card">
+                                    <div class="d-flex justify-content-between">
+                                        <strong class="text-success">T2</strong>
+                                        <small class="text-muted">₹450</small>
+                                    </div>
+                                    <div class="d-flex justify-content-between mt-4">
+                                        <span><i class="fas fa-user me-1"></i> 3</span>
+                                        <span><i class="fas fa-clock me-1"></i> 25m</span>
+                                    </div>
+                                </div>
+
+                                <div class="card  p-2 shadow-sm table-card border-success">
+                                    <div class="d-flex justify-content-between">
+                                        <strong style="color: brown;">T3</strong>
+                                        <small class="text-muted">₹0</small>
+                                    </div>
+                                    <div class="d-flex justify-content-between mt-4">
+                                        <span><i class="fas fa-user me-1"></i> 0</span>
+                                        <span><i class="fas fa-clock me-1"></i> -</span>
+                                    </div>
+                                </div>
+
+                                <div class="card p-2 shadow-sm table-card" style="background-color: #fafafa;">
+                                    <div class="d-flex justify-content-between">
+                                        <strong style="color: brown;">T4</strong>
+                                        <small class="text-muted">₹780</small>
+                                    </div>
+                                    <div class="d-flex justify-content-between mt-4">
+                                        <span><i class="fas fa-user me-1"></i> 4</span>
+                                        <span><i class="fas fa-clock me-1"></i> 50m</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-3 w-100 text-end">
+                                <button class="btn"
+                                    style="background-color: #0066A7; border:2px solid #0066A7; font-weight: bold; color:white">Assign</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const accordionButtons = document.querySelectorAll('[data-bs-toggle="collapse"]');
+                accordionButtons.forEach(button => {
+                    button.addEventListener('click', function () {
+                        const icon = this.querySelector('i');
+                        if (icon.classList.contains('fa-chevron-down')) {
+                            icon.classList.replace('fa-chevron-down', 'fa-chevron-right');
+                        } else {
+                            icon.classList.replace('fa-chevron-right', 'fa-chevron-down');
+                        }
+                    });
+
+                    // Initialize correct icons based on expanded state
+                    const targetId = button.getAttribute('data-bs-target');
+                    const targetCollapse = document.querySelector(targetId);
+                    const isExpanded = targetCollapse.classList.contains('show');
+                    const icon = button.querySelector('i');
+
+                    if (isExpanded) {
+                        icon.classList.replace('fa-chevron-right', 'fa-chevron-down');
+                    } else {
+                        icon.classList.replace('fa-chevron-down', 'fa-chevron-right');
+                    }
+                });
+            });
+        </script>
+    </body>

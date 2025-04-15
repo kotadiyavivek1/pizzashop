@@ -1,0 +1,134 @@
+@using pizzashop_Repository.ViewModel
+@model MenuItems
+<div class="modal-dialog modal-xl">
+    <div class="modal-content rounded-1">
+        <div class="modal-header border-0">
+            <h5 class="modal-title" id="edititemmodallabel">Edit Menu Item</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-secondary">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <div class="form-floating">
+                                <select class="form-select" id="categoryDropdownMapping" required>
+                                    <!-- Options will be dynamically populated by JavaScript -->
+                                </select>
+                                <label for="categoryDropdownMapping">Category*</label>
+                                <span class="error-message text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="ItemName" placeholder="" required>
+                                <label for="name">Name*</label>
+                                <span class="error-message text-danger"></span>
+                            </div>
+                        </div>
+                        <input type="hidden" id="itemId" value="@Model?.itemId" />
+                        <div class="col-lg-3 col-md-6 mb-3">
+                            <div class="form-floating">
+                                <select class="form-select" id="itemType" required>
+                                    <option selected disabled hidden>Select a type</option>
+                                    <option value="true">Veg</option>
+                                    <option value="false">Non-Veg</option>
+                                </select>
+                                <label for="itemType">Item Type*</label>
+                                <span class="error-message text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="form-floating mb-3">
+                                <input type="number" class="form-control" id="rate" required>
+                                <label for="rate">Rate*</label>
+                                <span class="error-message text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="form-floating mb-3">
+                                <input type="number" class="form-control" id="quantity" required>
+                                <label for="quantity">Quantity*</label>
+                                <span class="error-message text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 mb-3">
+                            <div class="form-floating">
+                                <select class="form-select" id="unitDropdown" required>
+                                </select>
+                                <label for="unitDropdown">Unit*</label>
+                                <span class="error-message text-danger"></span>
+                            </div>
+                        </div>
+
+
+                        <div class="col-lg-3 col-6 mb-3 mt-3">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="available">
+                                <label class="form-check-label" for="available">Available</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-4 mb-3  mt-3">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="defaultTax">
+                                <label class="form-check-label" for="defaultTax">Default Tax</label>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 mb-3">
+                            <div class="form-floating">
+                                <input type="number" class="form-control" id="taxPercentage">
+                                <label for="taxPercentage">Tax Percentage</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 mb-3">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="shortCode">
+                                <label for="shortCode">Short Code</label>
+                            </div>
+                        </div>
+
+                        <div class="col-12 mb-3">
+                            <div class="form-floating">
+                                <textarea class="form-control" id="description"></textarea>
+                                <label for="description">Description</label>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <h6 class="text-start">Upload Image</h6>
+                            <div class="rounded mb-3 upload-container">
+                                <input type="file" accept="image/*">
+                                <input type="hidden" name="ProfileImg">
+                                <label for="imageInput" id="file-item-add-label"
+                                    class="h-100 w-100 text-center align-content-center">
+                                    <span class="icon-upload">
+                                        <img src="~/images/cloud-upload.svg" alt=""> Browse files
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 bg-warning-subtle py-2">
+                    <div>
+                        <label for="ModifierGroups">Select Modifier Group</label>
+                        <div class="overflow-auto" style="max-width: 100%; white-space: nowrap; overflow-x: auto;">
+                            <select class="form-select" id="ModifierGroups">
+
+                            </select>
+                        </div>
+                        <div class="listModifiers" mt-3" style="max-height: 300px; overflow-y: auto;">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer border-0">
+                <button type="submit" class="btn btn-primary" id="submitEditItem">Save</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>

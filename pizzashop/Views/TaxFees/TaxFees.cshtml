@@ -1,0 +1,225 @@
+@using pizzashop_Repository.ViewModel
+@model FilterPaginationDto<TaxFeesDto>
+@{
+    ViewData["Title"] = "Taxes/Fees";
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/MenuPage.css" asp-append-version="true" />
+</head>
+
+<div class="content" id="content">
+    <div class="row mb-3 align-items-center">
+        <div class="col-md-6">
+            <h4 class="fw-semibold mb-0" style="color: #0b72b5;">Taxes/Fees</h4>
+        </div>
+        <div class="col-md-6">
+            <div class="d-flex justify-content-end align-items-center gap-2 top-controls">
+                <div class="position-relative search-box" style="flex-grow: 1;">
+                    <i class="bi bi-search position-absolute top-50 start-0 translate-middle-y ms-2 text-muted"></i>
+                    <input type="text" class="form-control ps-4 uniform-height h-auto" placeholder="Search"
+                        id="searchBox">
+                </div>
+                <button class="btn text-white h-auto d-flex align-items-center gap-1 uniform-height create-user"
+                    style="background-color: #0b72b5;" data-bs-toggle="modal" data-bs-target="#taxModal">
+                    <i class="bi bi-plus-lg"></i> <span class="d-none d-md-inline">New Tax</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="responsive-table">
+        <table class="table mb-0" style="color: #999999;" id="TaxFeesTable">
+            <tbody>
+                <!-- Dynamic Tax Rows Will Load Here -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="modal fade" id="taxModal" tabindex="-1" aria-labelledby="taxModalLabel">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h5 class="modal-title" id="taxModalLabel">Add New Tax</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <!-- Modal Body -->
+            <div class="modal-body">
+                <form id="taxForm" method="post" action="/TaxFees/AddTaxFees" novalidate>
+                    @Html.AntiForgeryToken()
+
+                    <!-- Hidden ID -->
+                    <input type="hidden" name="Item.Id" />
+
+                    <!-- Tax Name -->
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" name="Item.Name" id="taxNameInput"
+                            placeholder="Enter tax name" />
+                        <label for="taxNameInput">Tax Name</label>
+                        <span class="text-danger small tax-error" id="taxNameError"></span>
+                    </div>
+
+                    <!-- Type and Value -->
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <select class="form-select" name="Item.Type" id="taxTypeSelect">
+                                    <option value="" hidden>Select Tax Type</option>
+                                    <option value="true">Percentage</option>
+                                    <option value="false">Flat Item</option>
+                                </select>
+                                <label for="taxTypeSelect">Type*</label>
+                                <span class="text-danger small tax-error" id="taxTypeError"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="number" class="form-control" name="Item.TaxValue" id="taxRateInput"
+                                    placeholder="Tax Value" />
+                                <label for="taxRateInput">Tax Value*</label>
+                                <span class="text-danger small tax-error" id="taxRateError"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Switches -->
+                    <div class="row g-2 mt-3">
+                        <div class="col-6">
+                            <div class="form-check form-switch d-flex align-items-center gap-2">
+                                <input name="Item.IsEnabled" class="form-check-input" type="checkbox"
+                                    id="taxEnabledSwitch">
+                                <label class="form-check-label" for="taxEnabledSwitch">Enabled</label>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-check form-switch d-flex align-items-center gap-2">
+                                <input type="hidden" name="IsDefault" value="false" />
+                                <input name="Item.IsDefault" class="form-check-input" type="checkbox"
+                                    id="taxDefaultSwitch">
+                                <label class="form-check-label" for="taxDefaultSwitch">Default</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Footer -->
+                    <div class="modal-footer border-0 mt-4">
+                        <button type="submit" id="saveTaxBtn" class="btn btn-primary">Save</button>
+                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $.ajaxSetup({
+            headers: {
+                'RequestVerificationToken': $('input[name="__RequestVerificationToken"]').val()
+            }
+        });
+        let currentPage = @(@Model?.PageNumber ?? 1);
+        let totalPages = @(@Model?.TotalPages ?? 1);
+
+        // Load initial page
+        loadPage(1, 5, "");
+
+        // Submit tax form with validation and spinner
+        $("#taxForm").submit(function (e) {
+            e.preventDefault();
+
+            $(".tax-error").text("");
+            let isValid = true;
+
+            const name = $("#taxNameInput").val().trim();
+            const type = $("#taxTypeSelect").val();
+            const value = $("#taxRateInput").val();
+            const $saveBtn = $("#saveTaxBtn");
+
+            if (!name) {
+                $("#taxNameError").text("Tax name is required.");
+                isValid = false;
+            }
+            if (!type) {
+                $("#taxTypeError").text("Tax type is required.");
+                isValid = false;
+            }
+            if (!value || parseFloat(value) < 0) {
+                $("#taxRateError").text("Enter a valid tax value.");
+                isValid = false;
+            }
+
+            if (!isValid) return;
+
+            // Disable button and show spinner
+            $saveBtn.prop("disabled", true).html(`<span class="spinner-border spinner-border-sm me-1" role="status"></span>Saving...`);
+
+            const formData = $(this).serialize();
+
+            $.ajax({
+                url: '/TaxFees/AddTaxFees',
+                type: 'POST',
+                data: formData,
+                success: function (response) {
+                    if (response.success) {
+                        $('#taxModal').modal('hide');
+                        $("#taxForm")[0].reset();
+                        toastr.success("Tax added successfully!", "Success");
+                        loadPage(1, $('#pageSize').val(), $('#searchBox').val());
+                    }
+                },
+                error: function (xhr) {
+                    console.error("AJAX ERROR:", xhr);
+
+                    const res = xhr.responseJSON;
+                    if (res?.errors) {
+                        console.table(res.errors); // 👈 show model binding issues in console
+                        res.errors.forEach(e => {
+                            const field = e.Field?.split('.')?.pop();
+                            $(`#${field.toLowerCase()}Error`).text(e.Errors.join(", "));
+                        });
+                    } else {
+                        alert(res?.message || "Something went wrong.");
+                    }
+                }
+
+            });
+        });
+
+        // Clear errors on input change
+        $("#taxNameInput, #taxRateInput").on("input keyup", function () {
+            $(this).siblings(".tax-error").text("");
+        });
+
+        $("#taxTypeSelect").on("change", function () {
+            $("#taxTypeError").text("");
+        });
+
+        // Clear all errors when modal opens
+        $('#taxModal').on('show.bs.modal', function () {
+            $(".tax-error").text("");
+            $("#saveTaxBtn").html("Save").prop("disabled", false);
+        });
+
+        function loadPage(pageNumber, pageSize, searchString) {
+            if (pageNumber < 1 || pageNumber > totalPages) return;
+
+            $.ajax({
+                url: '/TaxFees/FilterTaxes',
+                type: 'GET',
+                data: { pageNumber, pageSize, searchString },
+                success: function (data) {
+                    $('#TaxFeesTable').html(data);
+                    currentPage = pageNumber;
+                },
+                error: function (error) {
+                    console.log("Error loading taxes:", error);
+                }
+            });
+        }
+    });
+</script>

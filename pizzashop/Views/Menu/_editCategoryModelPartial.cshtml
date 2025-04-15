@@ -1,0 +1,32 @@
+@using pizzashop_Repository.ViewModel
+@model Category
+
+<div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="editCategoryModalLabel">Edit Category</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form method="post" asp-action="EditCategory" id="EditCategoryForm" asp-route-id="@Model.Categoryid">
+            <div class="modal-body">
+                <input type="hidden" asp-for="Categoryid">
+
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control rounded-0" id="CategoryName" asp-for="CategoryName" required>
+                    <label for="CategoryName">Name</label>
+                </div>
+
+                <div class="form-floating">
+                    <textarea class="form-control rounded-0" id="Description" asp-for="Description"
+                        required>@Model.Description</textarea>
+                    <label for="Description">Description</label>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Update</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>

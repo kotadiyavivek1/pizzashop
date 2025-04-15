@@ -1,0 +1,79 @@
+@* 
+<nav class="navbar navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+        <button class="btn btn-outline-light " id="toggleSidebar">☰</button>
+        <div class="dropdown dropstart">
+            @if (roleId != "1")
+            {
+                <a class="btn" type="button" asp-action="Index" asp-controller="OrderApp">
+                    <img src="..\images\logos\tablet.svg">
+                </a>
+            }
+            <button class="btn dropdown-toggle rounded-0 border-0" type="button" id="dropdownMenuButton"
+                data-bs-toggle="dropdown">
+                <img src="~/images/Default_pfp.svg.png" alt="" srcset="" height="30" width="30">
+            </button>
+
+            <ul class="dropdown-menu rounded-0" aria-labelledby="dropdownMenuButton"
+                style="position: absolute; top:30px">
+                <li>
+                    <a class="dropdown-item" href="#">
+                        <i class="bi bi-person ms-2"></i>
+                        <span class="ms-2">Admin@123</span>
+                    </a>
+                </li>
+
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" asp-action="Profile" asp-controller="User"> <i class="bi bi-person"></i>
+                        <span class="ms-2">My Profile</span></a></li>
+                <li><a class="dropdown-item" asp-action="ChangePassword" asp-controller="Auth"> <i
+                            class="bi bi-arrow-clockwise"></i><span class="ms-2">Change Password</span></a></li>
+                <li><a class="dropdown-item" asp-action="Logout" asp-controller="Auth"><i
+                            class="bi bi-box-arrow-left"></i><span class="ms-2">Logout</span></a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div id="sidebar" class="sidebar">
+    <ul class="nav flex-column">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+            <img class="flex-fill ms-2" src="~/images/logos/pizzashop_logo.png" alt="" srcset="" height="40" width="40">
+            <h3 class="flex-fill ms-2">PIZZASHOP</h3>
+        </a>
+        <li class="nav-item mt-3 ms-3 d-flex align-items-center">
+            <i class="bi bi-border-all ms-2"></i>
+            <a href="#" class="nav-link text-black">Dashboard</a>
+        </li>
+        <li class="nav-item ms-3 d-flex align-items-center">
+            <i class="bi bi-person ms-2"></i>
+            <a asp-action="UserList" asp-controller="User" class="nav-link text-black">Users</a>
+        </li>
+        <li class="nav-item ms-3 d-flex align-items-center">
+            <i class="bi bi-person-gear ms-2"></i>
+            <a class="nav-link text-black" asp-action="Role" asp-controller="RolePermission">Role and Permission</a>
+        </li>
+        <li class="nav-item ms-3 d-flex align-items-center">
+            <img class="ms-2" src="~/images/icons/tray_17661974.png" height="16" width="16">
+            <a class="nav-link text-black" asp-action="ItemModifier" asp-controller="Menu">Menu</a>
+        </li>
+        <li class="nav-item ms-3 d-flex align-items-center">
+            <i class="bi bi-square-fill ms-2"></i>
+            <a class="nav-link text-black" asp-action="TableSection" asp-controller="Section">Table and Section</a>
+        </li>
+        <li class="nav-item ms-3 d-flex align-items-center">
+            <img class="ms-2" src="~/images/icons/economic_5278404.png" alt="" height="16" width="16">
+            <a class="nav-link text-black" asp-action="TaxFees" asp-controller="TaxFees">Taxes and Fees</a>
+        </li>
+        <li class="nav-item ms-3 d-flex align-items-center">
+            <img class="ms-2" src="~/images/icons/ballot-check_9821458.png" alt="" height="16" width="16">
+            <a class="nav-link text-black" asp-action="OrderExport" asp-controller="Orders">Orders</a>
+        </li>
+        <li class="nav-item ms-3 d-flex align-items-center">
+            <img class="ms-2" src="~/images/icons/planner_11984853.png" height="16" width="16" alt="">
+            <a class="nav-link text-black" asp-action="customerExport" asp-controller="Customers">Customers</a>
+        </li>
+    </ul>
+</div> *@

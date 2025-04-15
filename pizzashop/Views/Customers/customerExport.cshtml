@@ -1,0 +1,226 @@
+@using pizzashop_Repository.ViewModel
+
+<head>
+    <link rel="stylesheet" href="~/css/MenuPage.css" asp-append-version="true" />
+</head>
+
+<body>
+    <input type="hidden" id="hiddenFromDate">
+    <input type="hidden" id="hiddenToDate">
+    <div class="content p-3">
+        <div class="row">
+            <div class="col-12 col-md-4  mb-3">
+                <h2 class="blue-color">Customers</h2>
+            </div>
+
+            <div class="col-12 col-md-8">
+                <div class="row g-2 justify-content-end">
+                    <div class="col-12 col-sm-6 col-md-3">
+                        <div class="form-floating">
+                            <input type="text" id="searchOrders" class="form-control" placeholder="Search">
+                            <label for="searchOrders">Search Orders</label>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-5">
+                        <div class="form-floating">
+                            <select id="dateRangeFilterCustomer" class="form-select">
+                                <option value="All time">All</option>
+                                <option value="Last 7 days">Last 7 Days</option>
+                                <option value="Last 30 days">Last 30 Days</option>
+                                <option value="Current Month">Current Month</option>
+                                <option value="Custom Date">Custom Date</option>
+                            </select>
+                            <label for="dateRangeFilterCustomer">Date Range</label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-3">
+                        <button type="button" id="exportBtn" class="btn btn-custom btn-export h-100 w-100">
+                            <i class="bi bi-box-arrow-down"></i> Export
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="card-body">
+                    <div id="customerTableContainer">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="customDateModal" tabindex="-1" aria-labelledby="addTaxModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addTaxModalLabel">Select Date Range</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body d-flex">
+
+                    <div class="form-floating">
+                        <input type="date" id="startDate" class="form-control" placeholder="Start Date">
+                        <label for="fromDate">Start Date</label>
+                    </div>
+
+                    <div class="form-floating">
+                        <input type="date" id="endDate" class="form-control" placeholder="End Date">
+                        <label for="fromDate">End Date</label>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="applyDateRange">Save</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    $(document).ready(function () {
+        let currentSortOrder = "";
+
+        function loadCustomers(pageNumber = 1, pageSize = 5, searchString = '', sortOrder = '', dateRange = 'All', fromDate = '', toDate = '') {
+            $.ajax({
+                url: '/Customers/FilterCustomers',
+                type: 'GET',
+                data:
+                 {
+                    pageNumber: pageNumber,
+                    pageSize: pageSize,
+                    searchString: searchString,
+                    sortOrder: sortOrder,
+                    dateRange: dateRange,
+                    fromDate: fromDate,
+                    toDate: toDate
+                },
+                success: function (response) {
+                    console.log(response);
+                    $('#customerTableContainer').html(response);
+                },
+                error: function () {
+                    toastr.error("Failed to load customers.", "Error");
+                }
+            });
+        }
+
+        function getFilters() {
+            let dateRange = $('#dateRangeFilterCustomer').val();
+            let fromDate = $("#startDate").val();
+            let toDate = $("#endDate").val();
+
+            if (dateRange === "Custom Date") {
+                fromDate = $('#hiddenFromDate').val() || fromDate;
+                toDate = $('#hiddenToDate').val() || toDate;
+            }
+
+            return {
+                pageSize: $('#pageSize').val(),
+                searchString: $('#searchOrders').val(),
+                dateRange: dateRange,
+                fromDate: fromDate,
+                toDate: toDate,
+                sortOrder: $(".sortable.active").data('sort') || currentSortOrder
+            };
+        }
+
+        $('#customDateModal').on('hidden.bs.modal', function () {
+            $('.modal-backdrop').remove();
+            $(this).find('input').val('');
+        });
+
+        $(document).on('click', '#applyDateRange', function () {
+            let filters = getFilters();
+            if (filters.fromDate > filters.toDate)
+            {
+                toastr.error("Invalid date range! Please select valid dates.", "Error");
+            } 
+            else 
+            {    
+                $('#hiddenFromDate').val(filters.fromDate);
+                $('#hiddenToDate').val(filters.toDate);
+                $('#customDateModal').modal('hide');
+                loadCustomers(1, filters.pageSize, filters.searchString, filters.sortOrder, 'Custom Date', filters.fromDate, filters.toDate);
+            }
+        });
+
+        $(document).on('input', '#searchOrders', function () {
+            let filters = getFilters();
+            loadCustomers(1, filters.pageSize, filters.searchString, filters.sortOrder, filters.dateRange, filters.fromDate, filters.toDate);
+        });
+
+        $(document).on('change', '#dateRangeFilterCustomer', function () {
+            let selectedRange = $(this).val();
+            if (selectedRange === 'Custom Date') {
+                $('#customDateModal').modal('show');
+            } else {
+                let filters = getFilters();
+                loadCustomers(1, filters.pageSize, filters.searchString, filters.sortOrder, selectedRange);
+            }
+        });
+
+        $(document).on('click', '.page-btn', function (e) {
+            e.preventDefault();
+            let page = $(this).data('page');
+            if (page) {
+                let filters = getFilters();
+                loadCustomers(page, filters.pageSize, filters.searchString, filters.sortOrder, filters.dateRange, filters.fromDate, filters.toDate);
+            }
+        });
+
+        $(document).on('click', '.sortable', function (e) {
+            e.preventDefault();
+            let newSortOrder = $(this).data('sort');
+            $('.sortable').removeClass('active');
+            $(this).addClass('active');
+            currentSortOrder = newSortOrder;
+            let filters = getFilters();
+            loadCustomers(1, filters.pageSize, filters.searchString, currentSortOrder, filters.dateRange, filters.fromDate, filters.toDate);
+        });
+
+        $(document).on('change', '#pageSize', function () {
+            let filters = getFilters();
+            filters.pageSize = $(this).val();
+            loadCustomers(1, filters.pageSize, filters.searchString, filters.sortOrder, filters.dateRange, filters.fromDate, filters.toDate);
+        });
+
+        $(document).on('click', '#prevPage', function () {
+            let prevPage = $(this).data("prevpage");
+            if (prevPage > 0) {
+                let filters = getFilters();
+                loadCustomers(prevPage, filters.pageSize, filters.searchString, currentSortOrder, filters.dateRange, filters.fromDate, filters.toDate);
+            }
+        });
+
+        $(document).on('click', '#nextPage', function () {
+            let nextPage = $(this).data("nextpage");
+            let totalPages = $(this).data("totalpages");
+            if (nextPage <= totalPages) {
+                let filters = getFilters();
+                loadCustomers(nextPage, filters.pageSize, filters.searchString, currentSortOrder, filters.dateRange, filters.fromDate, filters.toDate);
+            }
+        });
+
+        $(document).on('click', '#exportBtn', function () {
+            let filters = getFilters();
+
+            let url = '/Customers/ExportToExcel?' +
+                'searchString=' + encodeURIComponent(filters.searchString) +
+                '&dateRange=' + encodeURIComponent(filters.dateRange) +
+                '&fromDate=' + encodeURIComponent(filters.fromDate) +
+                '&toDate=' + encodeURIComponent(filters.toDate);
+
+            console.log("Export URL:", url);
+            window.location.href = url;
+
+            setTimeout(function () {
+                toastr.success("Excel file exported successfully!");
+            }, 500);
+        });
+
+        loadCustomers();
+    });
+</script>

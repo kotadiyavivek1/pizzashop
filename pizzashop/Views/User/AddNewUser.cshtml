@@ -1,0 +1,284 @@
+@using pizzashop_Repository.ViewModel
+@model AddNewUserModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="content" id="content">
+    <div class="form-container">
+        <div class="row ms-3 me-3 mt-2">
+            <div class="col">
+                <div class="header-row d-flex d-flex justify-content-between">
+                    <h3 class="form-header">Add New User</h3>
+                    <a class="btn cancel back-button mb-3" asp-action="UserList" asp-controller="User">Back</a>
+                </div>
+                <div class="row">
+                    <form asp-action="addNewUser" asp-controller="User" method="post" enctype="multipart/form-data"
+                        id="userForm">
+                        <div class="col">
+                            <div class="row row-cols-md-2 row-cols-sm-1 row-cols-1">
+                                <div class="col">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" asp-for="FirstName" id="firstName"
+                                            placeholder="First Name">
+                                        <span class="error-message text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Last Name"
+                                            asp-for="LastName" id="lastName">
+                                        <span class="error-message text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row row-cols-md-2 row-cols-sm-1 row-cols-1">
+                                <div class="col">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="User Name"
+                                            asp-for="UserName">
+                                        <span class="error-message text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-floating">
+                                        <select class="form-select" id="role" asp-for="roleID">
+                                            <option value="" selected>Select Role</option>
+                                            <option value="1">Super Admin</option>
+                                            <option value="2">Account Manager</option>
+                                            <option value="3">Chef</option>
+                                        </select>
+                                        <label for="role">Role</label>
+                                        <span class="error-message text-danger"></span>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="row row-cols-md-2 row-cols-sm-1 row-cols-1">
+                                <div class="col">
+                                    <div class="input-group">
+                                        <input type="email" asp-for="Email" class="form-control" id="email"
+                                            placeholder="Email">
+                                        <span class="error-message text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="input-group">
+                                        <input type="password" class="form-control bg-white password-field"
+                                            placeholder="Password" asp-for="Password" id="password">
+                                        <span class="input-group-text bg-white m-0 password-toggle-icon">
+                                            <i class="fa-sharp fa-regular fa-eye-slash"></i>
+                                        </span>
+                                        <span class="error-message text-danger mt-3"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group mt-3">
+                                <label>Profile Picture</label>
+                                <input type="file" name="ProfilePicture" class="form-control" id="FileInput"
+                                    asp-for="ProfilePicture" hidden>
+                                <div class="btn upload-button mb-3" id="cloudButton">
+                                    <div class="text-center">
+                                        <img src="~/images/icons/cloud-arrow-up.svg" alt="">
+                                        <span id="fileLabel">Browse Files</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row row-cols-md-2 row-cols-sm-1 row-cols-1">
+                                <div class="col">
+                                    <div class="form-floating">
+                                        <select class="form-select" id="countrySelect" asp-for="@Model.CountryID">
+                                            <option selected>Select Country</option>
+                                            @foreach (var country in ViewBag.countries)
+                                            {
+                                                <option value="@country.Id">@country.Name</option>
+                                            }
+                                        </select>
+                                        <label for="countrySelect">Country</label>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-floating">
+                                        <select class="form-select" id="stateSelect" asp-for="@Model.StateID">
+                                            <option selected>Select State</option>
+                                        </select>
+                                        <label for="stateSelect">State</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row row-cols-md-2 row-cols-sm-1 row-cols-1 mt-3">
+                                <div class="col">
+                                    <div class="form-floating">
+                                        <select class="form-select" id="citySelect" asp-for="@Model.CityID">
+                                            <option selected>City</option>
+                                        </select>
+                                        <label for="citySelect">Select City</label>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Zip Code"
+                                            asp-for="ZipCode">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row row-cols-md-2 row-cols-sm-1 row-cols-1 mt-3">
+                                <div class="col">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Address" asp-for="Address">
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Phone" asp-for="Phone"
+                                            id="phone">
+                                        <span class="error-message text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-4">
+                                <div class="col">
+                                    <button type="submit" id="submitBtn" class="btn create-user">Create User</button>
+                                    <a type="button" class="btn cancel" asp-action="AddNewUser" asp-controller="User">Cancel</a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        function validateField(field, condition, errorMessage) {
+            let errorSpan = $(field).closest(".input-group, .form-floating").find(".error-message");
+            if (condition) {
+                errorSpan.text(errorMessage).show();
+                $(field).addClass("input-error");
+                return false;
+            } else {
+                errorSpan.text("").hide();
+                $(field).removeClass("input-error");
+                return true;
+            }
+        }
+
+         $("#cloudButton").click(function () {
+            $("#FileInput").click();
+        });
+
+        $("#FileInput").change(function () {
+            var fileName = $(this).val().split("\\").pop(); // Get file name from full path
+            if (fileName) {
+                $("#fileLabel").text(fileName); // Update text with file name
+            } else {
+                $("#fileLabel").text("Browse Files"); // Reset if no file selected
+            }
+        });
+
+        function validateForm() {
+            let isValid = true;
+            isValid = validateField("#firstName", $("#firstName").val().trim() === "", "First Name is required.") && isValid;
+
+            isValid = validateField("#email",
+                !/^[^ ]+@@[^ ]+\.[a-z]{2,3}$/.test($("#email").val()),
+                "Invalid email format."
+            ) && isValid;
+
+            isValid = validateField("#password",
+                !/^(?=.*[A-Z])(?=.*\d)(?=.*[@@$!%*?&])[A-Za-z\d@@$!%*?&]{8,}$/.test($("#password").val()),
+                "Password must be at least 8 characters with an uppercase letter, a number, and a special character."
+            ) && isValid;
+
+            isValid = validateField("#role", $("#role").val() === "", "Please select a role.") && isValid;
+
+            isValid = validateField("#phone",
+                !/^[0-9]{10}$/.test($("#phone").val()),
+                "Enter a valid 10-digit phone number."
+            ) && isValid;
+
+            return isValid;
+        }
+
+        $("#userForm input").on("keyup", function () {
+            validateField(this, $(this).val().trim() === "", $(this).attr("placeholder") + " is required.");
+        });
+
+        $("#role").on("change", function () {
+            validateField(this, $(this).val() === "", "Please select a role.");
+        });
+
+        $("#submitBtn").click(function (event) {
+            if (!validateForm()) {
+                event.preventDefault();
+            }
+        });
+
+
+        $("#countrySelect").change(function () {
+            var countryId = $(this).val();
+            if (countryId) {
+                $.ajax({
+                    url: "/User/getState",
+                    type: "GET",
+                    data: { countryId: countryId },
+                    dataType: "json",
+                    success: function (response) {
+                        console.log(response);
+
+                        var stateSelect = $("#stateSelect");
+                        stateSelect.html('<option selected>Select State</option>'); // Reset state dropdown
+
+                        if (response.success && response.data.length > 0) {
+                            $.each(response.data, function (index, state) {
+                                stateSelect.append(`<option value="${state.id}">${state.name}</option>`);
+                            });
+                        } else {
+                            console.log("No states found.");
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        console.log("AJAX Error:", xhr.responseText || error);
+                    }
+                });
+            } else {
+                $("#stateSelect").html('<option selected>Select State</option>');
+            }
+
+        });
+        $("#stateSelect").change(function () { 
+            var stateId = $(this).val();
+            console.log(stateId);
+
+            if (stateId) {
+                $.ajax({
+                    url: "/User/getCity",
+                    type: "GET",
+                    data: { stateId: stateId }, 
+                    dataType: "json",
+                    success: function (response) {
+                        console.log(response);
+                        var citySelect = $("#citySelect");
+                        citySelect.html('<option selected>Select City</option>');
+
+                        if (response.success && response.data.length > 0) {
+                            $.each(response.data, function (index, city) {
+                                citySelect.append(`<option value="${city.id}">${city.name}</option>`);
+                            });
+                        } else {
+                            console.log("No cities found.");
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        console.log("AJAX Error:", xhr.responseText || error);
+                    }
+                });
+            } else {
+                $("#citySelect").html('<option selected>Select City</option>');
+            }
+        });
+
+    });
+
+</script>

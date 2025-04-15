@@ -1,0 +1,146 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background: #0b72b5;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header h3 {
+    margin: 0;
+    font-size: 22px;
+}
+
+.tab-menu {
+    display: flex;
+    overflow-x: auto;
+    background: white;
+    border-bottom: 3px solid #ccc;
+    padding: 10px;
+}
+
+.tab-menu span {
+    margin-right: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    white-space: nowrap;
+    color: #999;
+    padding-bottom: 5px;
+}
+
+.tab-menu .active {
+    color: #0b72b5;
+}
+
+.status-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 10px 20px;
+}
+
+.primary {
+    background: #0b72b5 !important;
+    color: white !important;
+    font-weight: bold;
+    border: 2px solid;
+    cursor: pointer;
+}
+
+.secondary {
+    background: white !important;
+    color: #0b72b5 !important;
+    font-weight: bold;
+    border: 2px solid !important;
+    
+}
+
+.cards-scroll-wrapper {
+    overflow: hidden;
+    position: relative;
+}
+
+.cards-container {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+    width: max-content;
+}
+
+.card {
+    background: white;
+    border: 2px dashed #ccc;
+    padding: 10px;
+    width: 300px;
+    height: 300px;
+    border-radius: 8px;
+    flex: 0 0 300px;
+    margin: 0 10px;
+    box-sizing: border-box;
+}
+
+.card h3 {
+    margin: 0 0 10px 0;
+    color: #0b72b5;
+    font-size: 16px;
+}
+
+.card small {
+    display: block;
+    margin-bottom: 8px;
+    color: #888;
+}
+
+.item {
+    padding: 5px 0;
+    border-top: 1px solid #eee;
+}
+
+.item:first-child {
+    border-top: none;
+}
+
+.instruction {
+    color: #0077cc;
+    font-size: 12px;
+}
+
+
+@media screen and (max-width: 768px) {
+    .card {
+        width: 100vw;
+        height: auto;
+        flex: 0 0 100vw;
+    }
+
+    .cards-container {
+        margin-left: 0;
+    }
+}
+
+@media screen and (min-width: 768px) {
+}
+
+@media screen and (max-width: 768px) {
+    .card {
+        width: 90vw;
+        flex: 0 0 85vw;
+        margin: 0 5vw;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .card {
+        width: 95vw;
+        flex: 0 0 89vw;
+        margin: 0 2.5vw;
+        height: auto;
+    }   
+}

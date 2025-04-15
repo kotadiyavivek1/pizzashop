@@ -1,0 +1,221 @@
+@using pizzashop_Repository.ViewModel
+@model List<RolePermissionDto>
+
+<div class="content" id="content">
+    <div id="main-content" class="m-4">
+        <div class="row">
+            <div class="col">
+                <h2>Permission</h2>
+            </div>
+            <div class="col d-flex justify-content-end">
+                <button class="btn cancel" style="width: 20%;">Back</button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control w-25" placeholder="Role"
+                           value="@Model.FirstOrDefault()?.RoleName" readonly>
+                    <label>Role Name</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="row bg-white">
+            <div class="col" style="overflow-x:auto;">
+                <table class="table border bg-white">
+                    <thead>
+                        <tr>
+                            <th>
+                                <div class="form-check d-flex justify-content-center">
+                                    <input class="form-check-input master-checkbox" type="checkbox">
+                                </div>
+                            </th>
+                            <th>Permission</th>
+                            <th>Can View</th>
+                            <th>Can Add/Edit</th>
+                            <th>Can Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            var isDisabled = item.PermissionName == "RoleAndPermission";
+                            <tr>
+                                <td>
+                                    <div class="form-check d-flex justify-content-center">
+                                        <input class="form-check-input row-checkbox" type="checkbox">
+                                    </div>
+                                </td>
+                                <td>@item.PermissionName</td>
+                                <td>
+                                    <div class="form-check form-switch d-flex justify-content-center">
+                                        <input class="form-check-input permission-checkbox"
+                                               type="checkbox"
+                                               data-roleid="@item.RoleId"
+                                               data-permissionid="@item.PermissionId"
+                                               data-type="CanView"
+                                               @(item.CanView ? "checked" : "") />
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="form-check form-switch d-flex justify-content-center">
+                                        <input class="form-check-input permission-checkbox"
+                                               type="checkbox"
+                                               data-roleid="@item.RoleId"
+                                               data-permissionid="@item.PermissionId"
+                                               data-type="CanEdit"
+                                               @(item.CanEdit ? "checked" : "") />
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="form-check form-switch d-flex justify-content-center">
+                                        <input class="form-check-input permission-checkbox"
+                                               type="checkbox"
+                                               data-roleid="@item.RoleId"
+                                               data-permissionid="@item.PermissionId"
+                                               data-type="CanDelete"
+                                               @(item.CanDelete ? "checked" : "") />
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-end mt-2">
+            <button class="btn create-user" id="savePermissions">Save</button>
+            <button class="btn cancel ms-2">Cancel</button>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+
+        // Update the enable/disable state for CanEdit and CanDelete based on CanView.
+        function updateCanViewDependencies($row) {
+            const $canView = $row.find('.permission-checkbox[data-type="CanView"]');
+            const $canEdit = $row.find('.permission-checkbox[data-type="CanEdit"]');
+            const $canDelete = $row.find('.permission-checkbox[data-type="CanDelete"]');
+            const isViewChecked = $canView.prop('checked');
+
+            $canEdit.prop('disabled', !isViewChecked);
+            $canDelete.prop('disabled', !isViewChecked);
+
+            if (!isViewChecked) {
+                $canEdit.prop('checked', false);
+                $canDelete.prop('checked', false);
+            }
+        }
+
+        // Update row-checkbox state:
+        // If CanView is checked then row-checkbox must remain checked.
+        function updateRowCheckbox($row) {
+            const $canView = $row.find('.permission-checkbox[data-type="CanView"]');
+            if ($canView.prop('checked')) {
+                $row.find('.row-checkbox').prop('checked', true);
+                return;
+            }
+
+            // Otherwise, decide based on whether all other permission checkboxes are checked.
+            const $permissions = $row.find('.permission-checkbox[data-type]');
+            const allChecked = $permissions.length && $permissions.filter(':checked').length === $permissions.length;
+            $row.find('.row-checkbox').prop('checked', allChecked);
+        }
+
+        // Update master checkbox state based on all row checkboxes.
+        function updateMasterCheckbox() {
+            const total = $('tbody tr').length;
+            const checked = $('tbody .row-checkbox:checked').length;
+            $('.master-checkbox').prop('checked', total === checked);
+        }
+
+        // Master checkbox toggles all rows.
+        $('.master-checkbox').on('change', function () {
+            const isChecked = $(this).is(':checked');
+            $('tbody tr').each(function () {
+                const $row = $(this);
+                // Force CanView state based on master checkbox.
+                $row.find('.permission-checkbox[data-type="CanView"]').prop('checked', isChecked);
+                updateCanViewDependencies($row);
+                // The row checkbox should be on if CanView is true.
+                $row.find('.row-checkbox').prop('checked', isChecked);
+            });
+            updateMasterCheckbox();
+        });
+
+        // Row checkbox – when clicked, it now only controls CanView.
+        $('.row-checkbox').on('change', function () {
+            const $row = $(this).closest('tr');
+            const $canView = $row.find('.permission-checkbox[data-type="CanView"]');
+
+            // If someone attempts to uncheck the row checkbox while CanView is on, force it back to checked.
+            if (!$(this).is(':checked') && $canView.is(':checked')) {
+                $(this).prop('checked', true);
+                return;
+            }
+
+            // Otherwise, update CanView to match the row checkbox.
+            const isChecked = $(this).is(':checked');
+            $canView.prop('checked', isChecked);
+            updateCanViewDependencies($row);
+            updateMasterCheckbox();
+        });
+
+        // CanView checkbox event: if manually toggled, force the row checkbox to match.
+        $(document).on('change', '.permission-checkbox[data-type="CanView"]', function () {
+            const $row = $(this).closest('tr');
+            const isChecked = $(this).is(':checked');
+            // Update dependencies.
+            updateCanViewDependencies($row);
+            // Automatically update the row checkbox – if CanView is on, row checkbox remains on.
+            $row.find('.row-checkbox').prop('checked', isChecked);
+            updateMasterCheckbox();
+        });
+
+        // CanEdit and CanDelete events: if toggled when CanView is on,
+        // ensure the row checkbox remains checked.
+        $(document).on('change', '.permission-checkbox[data-type="CanEdit"], .permission-checkbox[data-type="CanDelete"]', function () {
+            const $row = $(this).closest('tr');
+            // If CanView is on, force row-checkbox to checked.
+            if ($row.find('.permission-checkbox[data-type="CanView"]').prop('checked')) {
+                $row.find('.row-checkbox').prop('checked', true);
+            }
+            updateRowCheckbox($row);
+            updateMasterCheckbox();
+        });
+
+        // Save Permissions button.
+        $('#savePermissions').on('click', function () {
+            const permissions = [];
+
+            $('.permission-checkbox[data-type]').each(function () {
+                permissions.push({
+                    RoleId: $(this).data('roleid'),
+                    PermissionId: $(this).data('permissionid'),
+                    Type: $(this).data('type'),
+                    IsChecked: $(this).prop('checked')
+                });
+            });
+
+            $.ajax({
+                url: "/RolePermission/UpdatePermissions",
+                type: "POST",
+                contentType: "application/json",
+                data: JSON.stringify(permissions),
+                success: function () {
+                    toastr.success("Permissions updated successfully!");
+                    location.reload();
+                },
+                error: function () {
+                    toastr.error("Error updating permissions!");
+                }
+            });
+        });
+    });
+</script>

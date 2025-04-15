@@ -1,0 +1,596 @@
+@using pizzashop_Repository.ViewModel
+@using pizzashop_Services.ImplementationService
+@model FilterPaginationDto<CategoryModifierDto>
+@{
+    Layout = null;
+}
+@if (Context != null)
+{
+    <div id="menuItemTable">
+        <div class="row mb-3 align-items-center">
+            <div class="col-md-6">
+                <h4 class="fw-semibold mb-0" style="color: #0b72b5;">Items</h4>
+            </div>
+            <div class="col-md-6">
+                <div class="d-flex justify-content-end align-items-center gap-2 top-controls">
+                    <!-- Search Box -->
+                    <div class="position-relative search-box" style="flex-grow: 1;">
+                        <i class="bi bi-search position-absolute top-50 start-0 translate-middle-y ms-2 text-muted"></i>
+                        <input type="text" class="form-control ps-4 uniform-height h-auto" id="searchInput"
+                            placeholder="Search">
+                    </div>
+                    @if (PermissionHelper.HasPermission(Context, "Menu", false, true, false))
+                    {
+                        <!-- Trash Button -->
+                        <button class="btn btn-outline-secondary uniform-height h-auto" id="TrashButton"
+                            title="Delete Selected">
+                            <i class="bi bi-trash"></i>
+                        </button>
+                    }
+                    @if (PermissionHelper.HasPermission(Context, "Menu", false, true, false))
+                    {
+                        <!-- New Item Button -->
+                        <button class="btn text-white h-auto d-flex align-items-center gap-1 uniform-height add-items"
+                            style="background-color: #0b72b5;" data-bs-toggle="modal" data-bs-target="#addMenuItemModal"
+                            asp-action="GetItemsForAdd">
+                            <i class="bi bi-plus-lg"></i> <span class="d-none d-md-inline">New Item</span>
+                        </button>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <div class="responsive-table">
+            <table class="table mb-0">
+                <thead class="fw-bold" style="font-size: 14px; color: #999999;">
+                    <tr>
+                        <th style="width: 40px;">
+                            <input type="checkbox" class="form-check-input" id="selectAll" />
+                        </th>
+                        <th style="width: 24%;">Name</th>
+                        <th style="min-width: 100px;">Item Type</th>
+                        <th style="min-width: 100px;">Rate</th>
+                        <th style="min-width: 100px;">Quantity</th>
+                        <th style="min-width: 100px;">Available</th>
+                        @if (PermissionHelper.HasPermission(Context, "Menu", false, true, false) ||
+                                            (Context != null && PermissionHelper.HasPermission(Context, "Menu", false, false, true)))
+                        {
+                            <th style="min-width: 120px;">Action</th>
+                        }
+                    </tr>
+                </thead>
+
+                <tbody style="color: #999999;">
+                    @foreach (var item in @Model?.Item.menuItems ?? new List<MenuItems>())
+                    {
+                        <tr style="font-size: 14px;">
+                            <td>
+                                <input type="checkbox" class="form-check-input checkbox" data-id="@item.itemId" />
+                            </td>
+                            <td>
+                                <div class="d-flex align-items-center gap-2">
+                                    <img src="@item.ImagePath" class="rounded menu-item-img" style="object-fit: cover;" />
+                                    <span class="item-name" title="@item.Name">
+                                        @item.Name
+                                    </span>
+                                </div>
+                            </td>
+                            <td>
+                                <img src="~/images/icons/@(item.Type == true ? "veg-icon.svg" : "non-veg-icon.svg")"
+                                    class="veg-icon" style="width: 18px;" />
+                            </td>
+                            <td>@item.Price</td>
+                            <td>@item.Quantity</td>
+                            <td>
+                                <div class="form-check form-switch d-flex justify-content-center">
+                                    <input class="form-check-input" type="checkbox" checked />
+                                </div>
+                            </td>
+                            @if ((Context != null && PermissionHelper.HasPermission(Context, "Menu", false, true, false)) ||
+                                                (Context != null && PermissionHelper.HasPermission(Context, "Menu", false, false, true)))
+                            {
+                                <td class="action-buttons">
+                                    <!-- Edit Button - Always visible -->
+                                    @if (PermissionHelper.HasPermission(Context, "Menu", false, true, false))
+                                    {
+                                        <button type="button" class="btn btn-sm p-0 text-primary me-2 EditButton" data-bs-toggle="modal"
+                                            data-bs-target="#editItemModal" data-id="@item.itemId">
+                                            <i class="bi bi-pencil"></i>
+                                        </button>
+                                    }
+                                    @if (PermissionHelper.HasPermission(Context, "Menu", false, false, true))
+                                    {
+                                        <!-- Delete Button - Always visible -->
+                                        <button type="button" class="btn btn-sm p-0 text-danger delete-item-btn" data-id="@item.itemId"
+                                            data-categoryId="@item.CategoryId" data-bs-toggle="modal" data-bs-target="#deleteItemModal">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    }
+                                </td>
+                            }
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Pagination Section -->
+        <div class="d-flex justify-content-between align-items-center mt-3 flex-wrap">
+            <div class="d-flex align-items-center gap-2">
+                <span class="text-muted">Items per page</span>
+                <select class="form-select form-select-sm w-auto" id="pageSize">
+                    <option value="3" selected="@(Model?.PageSize == 3)">3</option>
+                    <option value="4" selected="@(Model?.PageSize == 4)">4</option>
+                    <option value="5" selected="@(Model?.PageSize == 5)">5</option>
+                </select>
+            </div>
+            <ul class="pagination pagination-sm mb-0 mt-2 mt-md-0">
+                <li class="page-item @(Model?.PageNumber <= 1 ? "disabled" : "")">
+                    <a class="page-link" href="#" id="prevPage"><i class="bi bi-chevron-left"></i></a>
+                </li>
+                <li class="page-item @(Model?.PageNumber >= Model?.TotalPages ? "disabled" : "")">
+                    <a class="page-link" href="#" id="nextPage"><i class="bi bi-chevron-right"></i></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="modal fade editItemModal" id="editItemModal" tabindex="-1" aria-labelledby="editItemModalLabel"
+        aria-hidden="true">
+        @await Html.PartialAsync("_EditItemPartial", @Model?.Item.menuItem)
+    </div>
+    <div class="modal fade" id="deleteItemModal" tabindex="-1" aria-labelledby="deleteItemModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteItemModalLabel">Confirm Delete</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Are you sure you want to delete this item?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-danger" id="confirmDeleteItemBtn">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="bulkDeleteModal" tabindex="-1" aria-labelledby="bulkDeleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="bulkDeleteModalLabel">Confirm Delete</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Are you sure you want to delete the selected items?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-danger" id="confirmBulkDeleteBtn">Delete</button>
+                </div>
+            </div>
+        </div>  
+    </div>
+}
+    <script>
+    var CategoryId;
+    function LoadItemsByCategory(CategoryId) {
+        let pageNumber = 1;
+        let pageSize = $("#pageSize").val() || 3;
+        let searchString = $("#searchInput").val() || "";
+        $.ajax({
+            url: "/Menu/GetFilterItems",
+            type: "GET",
+            data: {
+                categoryId: CategoryId,
+                pageNumber: pageNumber,
+                pageSize: pageSize,
+                searchString: searchString
+            },
+            success: function (response) {
+                $("#menuItemTable").html(response);
+            },
+            error: function () {
+                alert("Loading Error...");
+            }
+        })
+    }
+
+
+    $(document).ready(function () {
+        $("#selectAll").click(function () {
+            let isChecked = $(this).prop("checked");
+            $(".checkbox").prop("checked", isChecked);
+        });
+
+        $(".checkbox").click(function () {
+            if (!$(this).prop("checked")) {
+                $("#selectAll").prop("checked", false);
+            }
+        });
+
+        let deleteItemId;
+        let deleteCategoryId;
+
+        $(".delete-item-btn").click(function () {
+            deleteItemId = $(this).data("id");
+            deleteCategoryId = $(this).data("categoryid");
+
+        });
+
+        $("#confirmDeleteItemBtn").click(function () {
+            $.ajax({
+                url: "/Menu/DeleteItem",
+                type: "POST",
+                data: { itemId: deleteItemId },
+                success: function (response) {
+                    $('#deleteItemModal').modal('hide');
+                    toastr.success("Item deleted successfully!");
+                    LoadItemsByCategory(deleteCategoryId);
+                },
+                error: function () {
+                    $('#deleteItemModal').modal('hide');
+                    toastr.error("Error deleting item.");
+                }
+            });
+        });
+
+        let selectedItemIds = [];
+
+        $("#TrashButton").click(function () {
+
+            $(".checkbox:checked").each(function () {
+                selectedItemIds.push($(this).data("id"));
+            });
+            console.log(selectedItemIds);
+
+            if (selectedItemIds.length === 0) {
+                toastr.error("No items selected!");
+                return;
+            }
+
+            $("#bulkDeleteModal").modal("show");
+        });
+
+        $("#confirmBulkDeleteBtn").click(function () {
+            $.ajax({
+                url: "/Menu/DeleteSelectedItems",
+                type: "POST",
+                contentType: "application/json",
+                data: JSON.stringify(selectedItemIds),
+                success: function (response) {
+                    $('#bulkDeleteModal').modal('hide');
+
+                    if (response.success) {
+
+                        let categoryId = $(".delete-item-btn").first().data("categoryid");
+                        toastr.success("Items deleted successfully!");
+
+                        if (categoryId) {
+                            LoadItemsByCategory(categoryId);
+                        } else {
+                            location.reload();
+                        }
+                    } else {
+                        toastr.error(response.message || "Error deleting items.");
+                    }
+                },
+                error: function () {
+                    $('#bulkDeleteModal').modal('hide');
+                    toastr.error("Error deleting items.");
+                }
+            });
+        });
+
+
+        $('.EditButton').on('click', function () {
+            const id = $(this).data('id');
+
+            $.when(loadCategories(), loadUnits(), loadModifierGroups()).done(function () {
+                $.ajax({
+                    url: '/Menu/GetItemDetails',
+                    type: 'GET',
+                    data: { id: id },
+                    success: function (response) {
+                        if (response) {
+                            console.log(response);
+                            // Populate form fields
+                            $('#itemId').val(response.itemId);
+                            console.log(response.itemId)
+                            $('#ItemName').val(response.name);
+                            $('#rate').val(response.price);
+                            $('#quantity').val(response.quantity);
+                            $('#available').prop('checked', response.isAvailable);
+                            $('#defaultTax').prop('checked', response.isDefaultTax);
+                            $('#isFavourite').prop('checked', response.isfavourite);
+                            $('#taxPercentage').val(response.taxPercentage);
+                            $('#shortCode').val(response.shortCode);
+                            $('#description').val(response.description);
+                            $('#categoryDropdownMapping').val(response.categoryId).change();
+                            $('#unitDropdown').val(response.unitId).change();
+                            $('#itemType').val(response.type.toString()).change();
+
+                            $('.listModifiers').empty();
+                            if (response.modifiergroup?.length > 0) {
+                                response.modifiergroup.forEach(group => {
+                                    renderModifierGroup(group.modifierGroupId, group.name, group.minSelection, group.maxSelection);
+                                });
+                            }
+
+                            $('#editItemModal').modal('show');
+                        }
+                    },
+                    error: function (error) {
+                        console.error("Error fetching item details:", error);
+                    }
+                });
+            });
+        });
+
+        // Load Dropdowns
+        function loadCategories() {
+            return $.ajax({
+                url: '/Menu/GetCategories',
+                type: 'GET',
+                success: function (categories) {
+                    const dropdown = $('#categoryDropdownMapping');
+                    dropdown.empty().append('<option disabled selected>Select Category</option>');
+                    categories.forEach(cat => {
+                        dropdown.append(`<option value="${cat.categoryid}">${cat.categoryName}</option>`);
+                    });
+                }
+            });
+        }
+
+        function loadUnits() {
+            return $.ajax({
+                url: '/Menu/GetUnits',
+                type: 'GET',
+                success: function (units) {
+                    const dropdown = $('#unitDropdown');
+                    dropdown.empty().append('<option disabled selected>Select Unit</option>');
+                    units.forEach(unit => {
+                        dropdown.append(`<option value="${unit.id}">${unit.name}</option>`);
+                    });
+                }
+            });
+        }
+
+        function loadModifierGroups() {
+            return $.ajax({
+                url: "/Menu/GetModifierGroups",
+                type: "GET",
+                success: function (data) {
+                    let modifierDropdown = $('#ModifierGroups');
+                    modifierDropdown.empty().append('<option selected disabled hidden>Select Modifier Group</option>');
+                    $.each(data, function (index, item) {
+                        modifierDropdown.append(`<option value="${item.id}">${item.modifiergroupName}</option>`);
+                    });
+                },
+                error: function (err) {
+                    console.log("Error loading modifier groups:", err);
+                }
+            });
+        }
+
+
+        function generateMinMaxOptions(max, selected) {
+            let options = '';
+            for (let i = 0; i <= max; i++) {
+                options += `<option value="${i}" ${i === selected ? 'selected' : ''}>${i}</option>`;
+            }
+            return options;
+        }
+
+
+        function renderModifierGroup(groupId, groupName, min = 0, max = 0) {
+            if ($(`#modifier-group-${groupId}`).length > 0) {
+                return;
+            }
+
+            $.ajax({
+                url: '/Menu/GetModifiersByGroup',
+                type: 'GET',
+                data: { groupId: groupId },
+                success: function (modifiers) {
+                    const groupBoxHtml = `
+                <div class="modifier-group-box border rounded p-2 mb-2" id="modifier-group-${groupId}">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <strong>${groupName}</strong>
+                        <button type="button" class="btn btn-sm btn-danger remove-modifier-group" data-groupid="${groupId}">
+                            <i class="bi bi-trash"></i>
+                        </button>
+                    </div>
+                    <div class="mt-2 row">
+                        <div class="col">
+                            <label class="form-label">Min Selection</label>
+                            <select class="form-select min-selection" id="min-${groupId}">
+                                ${generateMinMaxOptions(modifiers.length, min)}
+                            </select>
+                        </div>
+                        <div class="col">
+                            <label class="form-label">Max Selection</label>
+                            <select class="form-select max-selection" id="max-${groupId}">
+                                ${generateMinMaxOptions(modifiers.length, max)}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mt-2 modifier-list" id="modifier-list-${groupId}">
+                        ${modifiers.length > 0
+                            ? modifiers.map(mod => `
+                                    <div class="border p-2 rounded mb-1">
+                                        <span><strong>${mod.name}</strong></span> - ₹${mod.rate.toFixed(2)}
+                                    </div>
+                                `).join('')
+                            : `<div class='text-muted'>No modifiers in this group.</div>`
+                        }
+                    </div>
+                </div>`;
+
+                    $('.listModifiers').append(groupBoxHtml);
+                },
+                error: function () {
+                    alert("Failed to load modifiers.");
+                }
+            });
+        }
+
+        // On Modifier Group Dropdown Change
+        $('#ModifierGroups').on('change', function () {
+            const groupId = $(this).val();
+            $(this).val('');
+            // Check if group already exists
+            if ($(`#modifier-group-${groupId}`).length > 0) {
+                alert("This modifier group is already added.");
+                return;
+            }
+
+            $.ajax({
+                url: '/Menu/GetModifierGroupDetails',
+                type: 'GET',
+                data: { groupId: groupId },
+                success: function (response) {
+                    if (response) {
+                        console.log(response);
+                        renderModifierGroup(response.id, response.modifiergroupName);
+                    }
+                },
+                error: function () {
+                    alert("Failed to load modifier group details.");
+                }
+            });
+        });
+
+        // Remove modifier group
+        $(document).on('click', '.remove-modifier-group', function () {
+            const groupId = $(this).data('groupid');
+            $(`#modifier-group-${groupId}`).remove();
+        });
+
+
+        // Submit Button Click
+        $('#submitEditItem').click(function (e) {
+
+            e.preventDefault();
+            let isValid = true;
+            $(".error-message").text("");
+
+            let name = $("#ItemName").val().trim();
+            let category = $("#categoryDropdownMapping").val();
+            let unit = $("#unitDropdown").val();
+            let itemRate = parseFloat($("#rate").val());
+            let quantity = parseFloat($("#quantity").val());
+
+            if (name === "") {
+                isValid = false;
+                console.log("zeel");
+                $("#ItemName").siblings(".error-message").text("Name is required.");
+            }
+
+            if (!category) {
+                isValid = false;
+                $("#categoryDropdownMapping").siblings(".error-message").text("Category is required.");
+            }
+
+            if (!unit) {
+                isValid = false;
+                $("#unitDropdown").siblings(".error-message").text("Unit is required.");
+            }
+
+            if (isNaN(itemRate)) {
+                isValid = false;
+                $("#rate").siblings(".error-message").text("Rate is required.");
+
+            } else if (itemRate <= 0) {
+                isValid = false;
+                $("#rate").siblings(".error-message").text("Rate must be greater than 0.");
+            }
+
+            if (isNaN(quantity)) {
+                isValid = false;
+                $("#quantity").siblings(".error-message").text("Quantity is required.");
+            } else if (quantity <= 0) {
+                isValid = false;
+                $("#quantity").siblings(".error-message").text("Quantity must be greater than 0.");
+            }
+
+            // Validate modifier groups
+            $(".modifier-group").each(function () {
+                let $group = $(this);
+                let minVal = parseInt($group.find(".min-selection").val(), 10);
+                let maxVal = parseInt($group.find(".max-selection").val(), 10);
+
+                if (isNaN(minVal)) {
+                    isValid = false;
+                    $group.find(".min-selection").siblings(".error-message").text("Min Selection is required.");
+                }
+
+                if (isNaN(maxVal)) {
+                    isValid = false;
+                    $group.find(".max-selection").siblings(".error-message").text("Max Selection is required.");
+                }
+
+                if (!isNaN(minVal) && !isNaN(maxVal) && minVal > maxVal) {
+                    isValid = false;
+                    $group.find(".max-selection").siblings(".error-message").text("Min cannot exceed Max.");
+                }
+            });
+
+            if (!isValid) return;
+
+
+
+
+            // Collect Basic Info
+            var formData = new FormData();
+            formData.append("Name", $('#ItemName').val());
+            formData.append("Price", $('#rate').val());
+            formData.append("Quantity", $('#quantity').val());
+            formData.append("CategoryId", $('#categoryDropdownMapping').val());
+            formData.append("UnitId", $('#unitDropdown').val());
+            formData.append("Type", $('#itemType').val());
+            formData.append("IsAvailable", $('#available').is(':checked'));
+            formData.append("IsDefaultTax", $('#defaultTax').is(':checked'));
+            formData.append("TaxPercentage", $('#taxPercentage').val());
+            formData.append("ShortCode", $('#shortCode').val());
+            formData.append("Description", $('#description').val());
+            formData.append("itemId", $('#itemId').val());
+            let imageFile = $('input[type=file]')[0].files[0];
+            if (imageFile) {
+                formData.append("Image", imageFile);
+            }
+
+            $('.modifier-group-box').each(function (index) {
+                let groupId = $(this).attr('id').split('-').pop();
+                let minVal = $(`#min-${groupId}`).val();
+                let maxVal = $(`#max-${groupId}`).val();
+
+                formData.append(`Modifiergroup[${index}].ModifierGroupId`, groupId);
+                formData.append(`Modifiergroup[${index}].MinSelection`, minVal);
+                formData.append(`Modifiergroup[${index}].MaxSelection`, maxVal);
+            });
+
+            $.ajax({
+                url: '/Menu/UpdateItem',
+                type: 'POST',
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function (response) {
+                    if (response.success) {
+                        toastr.success(response.message);
+                        $('#editItemModal').modal('hide');
+                    } else {
+                        toastr.error(response.message);
+                    }
+                },
+                error: function (err) {
+                    toastr.error('A server error occurred.');
+                    console.error(err);
+                }
+            });
+        });
+
+    });
+</script>
