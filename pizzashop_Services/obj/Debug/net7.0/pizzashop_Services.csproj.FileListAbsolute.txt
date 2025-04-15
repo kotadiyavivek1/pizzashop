@@ -1,0 +1,489 @@
+C:/Users/kotad/Downloads/pizzashop_final_1-main/pizzashop_final_1-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.dll
+C:/Users/kotad/Downloads/pizzashop_final_1-main/pizzashop_final_1-main/pizzashop_Services/obj/Debug/net7.0/refint/pizzashop_Services.dll
+C:/Users/kotad/Downloads/pizzashop_final_1-main/pizzashop_final_1-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.pdb
+C:/Users/kotad/Downloads/pizzashop_final_1-main/pizzashop_final_1-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.deps.json
+C:/Users/kotad/Downloads/pizzashop_final_1-main/pizzashop_final_1-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.dll
+C:/Users/kotad/Downloads/pizzashop_final_1-main/pizzashop_final_1-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.pdb
+C:/Users/kotad/Downloads/pizzashop_final_1-main/pizzashop_final_1-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Repository.dll
+C:/Users/kotad/Downloads/pizzashop_final_1-main/pizzashop_final_1-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Repository.pdb
+C:/Users/kotad/Downloads/pizzashop_final_1-main/pizzashop_final_1-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.AssemblyReference.cache
+C:/Users/kotad/Downloads/pizzashop_final_1-main/pizzashop_final_1-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/kotad/Downloads/pizzashop_final_1-main/pizzashop_final_1-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.AssemblyInfoInputs.cache
+C:/Users/kotad/Downloads/pizzashop_final_1-main/pizzashop_final_1-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.AssemblyInfo.cs
+C:/Users/kotad/Downloads/pizzashop_final_1-main/pizzashop_final_1-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.CoreCompileInputs.cache
+C:/Users/kotad/Downloads/pizzashop_final_1-main/pizzashop_final_1-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.CopyComplete
+C:/Users/kotad/Downloads/pizzashop_final_1-main/pizzashop_final_1-main/pizzashop_Services/obj/Debug/net7.0/ref/pizzashop_Services.dll
+C:/Users/pci135/Downloads/pizzashop_final_1-main-main/pizzashop_final_1-main-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.deps.json
+c:/Users/pci135/Downloads/pizzashop_final_1-main-main/pizzashop_final_1-main-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.dll
+c:/Users/pci135/Downloads/pizzashop_final_1-main-main/pizzashop_final_1-main-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.pdb
+c:/Users/pci135/Downloads/pizzashop_final_1-main-main/pizzashop_final_1-main-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Repository.dll
+c:/Users/pci135/Downloads/pizzashop_final_1-main-main/pizzashop_final_1-main-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Repository.pdb
+c:/Users/pci135/Downloads/pizzashop_final_1-main-main/pizzashop_final_1-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.AssemblyReference.cache
+c:/Users/pci135/Downloads/pizzashop_final_1-main-main/pizzashop_final_1-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.GeneratedMSBuildEditorConfig.editorconfig
+c:/Users/pci135/Downloads/pizzashop_final_1-main-main/pizzashop_final_1-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.AssemblyInfoInputs.cache
+c:/Users/pci135/Downloads/pizzashop_final_1-main-main/pizzashop_final_1-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.AssemblyInfo.cs
+c:/Users/pci135/Downloads/pizzashop_final_1-main-main/pizzashop_final_1-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.CoreCompileInputs.cache
+C:/Users/pci135/Downloads/pizzashop_final_1-main-main/pizzashop_final_1-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.CopyComplete
+c:/Users/pci135/Downloads/pizzashop_final_1-main-main/pizzashop_final_1-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.dll
+c:/Users/pci135/Downloads/pizzashop_final_1-main-main/pizzashop_final_1-main-main/pizzashop_Services/obj/Debug/net7.0/refint/pizzashop_Services.dll
+c:/Users/pci135/Downloads/pizzashop_final_1-main-main/pizzashop_final_1-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.pdb
+C:/Users/pci135/Downloads/pizzashop_final_1-main-main/pizzashop_final_1-main-main/pizzashop_Services/obj/Debug/net7.0/ref/pizzashop_Services.dll
+C:/Users/kotad/Downloads/pizzashop_final_1-main-main-main/pizzashop_final_1-main-main-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.deps.json
+C:/Users/kotad/Downloads/pizzashop_final_1-main-main-main/pizzashop_final_1-main-main-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.dll
+C:/Users/kotad/Downloads/pizzashop_final_1-main-main-main/pizzashop_final_1-main-main-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.pdb
+C:/Users/kotad/Downloads/pizzashop_final_1-main-main-main/pizzashop_final_1-main-main-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Repository.dll
+C:/Users/kotad/Downloads/pizzashop_final_1-main-main-main/pizzashop_final_1-main-main-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Repository.pdb
+C:/Users/kotad/Downloads/pizzashop_final_1-main-main-main/pizzashop_final_1-main-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.AssemblyReference.cache
+C:/Users/kotad/Downloads/pizzashop_final_1-main-main-main/pizzashop_final_1-main-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/kotad/Downloads/pizzashop_final_1-main-main-main/pizzashop_final_1-main-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.AssemblyInfoInputs.cache
+C:/Users/kotad/Downloads/pizzashop_final_1-main-main-main/pizzashop_final_1-main-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.AssemblyInfo.cs
+C:/Users/kotad/Downloads/pizzashop_final_1-main-main-main/pizzashop_final_1-main-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.CoreCompileInputs.cache
+C:/Users/kotad/Downloads/pizzashop_final_1-main-main-main/pizzashop_final_1-main-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.CopyComplete
+C:/Users/kotad/Downloads/pizzashop_final_1-main-main-main/pizzashop_final_1-main-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.dll
+C:/Users/kotad/Downloads/pizzashop_final_1-main-main-main/pizzashop_final_1-main-main-main/pizzashop_Services/obj/Debug/net7.0/refint/pizzashop_Services.dll
+C:/Users/kotad/Downloads/pizzashop_final_1-main-main-main/pizzashop_final_1-main-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.pdb
+C:/Users/kotad/Downloads/pizzashop_final_1-main-main-main/pizzashop_final_1-main-main-main/pizzashop_Services/obj/Debug/net7.0/ref/pizzashop_Services.dll
+C:/Users/pci135/Downloads/pizzashop_final_1-main-main-main-main (2)/pizzashop_final_1-main-main-main-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.deps.json
+C:/Users/pci135/Downloads/pizzashop_final_1-main-main-main-main (2)/pizzashop_final_1-main-main-main-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.dll
+C:/Users/pci135/Downloads/pizzashop_final_1-main-main-main-main (2)/pizzashop_final_1-main-main-main-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.pdb
+C:/Users/pci135/Downloads/pizzashop_final_1-main-main-main-main (2)/pizzashop_final_1-main-main-main-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Repository.dll
+C:/Users/pci135/Downloads/pizzashop_final_1-main-main-main-main (2)/pizzashop_final_1-main-main-main-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Repository.pdb
+C:/Users/pci135/Downloads/pizzashop_final_1-main-main-main-main (2)/pizzashop_final_1-main-main-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.AssemblyReference.cache
+C:/Users/pci135/Downloads/pizzashop_final_1-main-main-main-main (2)/pizzashop_final_1-main-main-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/pci135/Downloads/pizzashop_final_1-main-main-main-main (2)/pizzashop_final_1-main-main-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.AssemblyInfoInputs.cache
+C:/Users/pci135/Downloads/pizzashop_final_1-main-main-main-main (2)/pizzashop_final_1-main-main-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.AssemblyInfo.cs
+C:/Users/pci135/Downloads/pizzashop_final_1-main-main-main-main (2)/pizzashop_final_1-main-main-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.CoreCompileInputs.cache
+C:/Users/pci135/Downloads/pizzashop_final_1-main-main-main-main (2)/pizzashop_final_1-main-main-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.CopyComplete
+C:/Users/pci135/Downloads/pizzashop_final_1-main-main-main-main (2)/pizzashop_final_1-main-main-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.dll
+C:/Users/pci135/Downloads/pizzashop_final_1-main-main-main-main (2)/pizzashop_final_1-main-main-main-main/pizzashop_Services/obj/Debug/net7.0/refint/pizzashop_Services.dll
+C:/Users/pci135/Downloads/pizzashop_final_1-main-main-main-main (2)/pizzashop_final_1-main-main-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.pdb
+C:/Users/pci135/Downloads/pizzashop_final_1-main-main-main-main (2)/pizzashop_final_1-main-main-main-main/pizzashop_Services/obj/Debug/net7.0/ref/pizzashop_Services.dll
+c:/Users/pci135/Downloads/pizzashop_final_1-main-main-main-main (2)/pizzashop_mvc/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.deps.json
+c:/Users/pci135/Downloads/pizzashop_final_1-main-main-main-main (2)/pizzashop_mvc/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.dll
+c:/Users/pci135/Downloads/pizzashop_final_1-main-main-main-main (2)/pizzashop_mvc/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.pdb
+c:/Users/pci135/Downloads/pizzashop_final_1-main-main-main-main (2)/pizzashop_mvc/pizzashop_Services/bin/Debug/net7.0/pizzashop_Repository.dll
+c:/Users/pci135/Downloads/pizzashop_final_1-main-main-main-main (2)/pizzashop_mvc/pizzashop_Services/bin/Debug/net7.0/pizzashop_Repository.pdb
+c:/Users/pci135/Downloads/pizzashop_final_1-main-main-main-main (2)/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.AssemblyReference.cache
+c:/Users/pci135/Downloads/pizzashop_final_1-main-main-main-main (2)/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.GeneratedMSBuildEditorConfig.editorconfig
+c:/Users/pci135/Downloads/pizzashop_final_1-main-main-main-main (2)/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.AssemblyInfoInputs.cache
+c:/Users/pci135/Downloads/pizzashop_final_1-main-main-main-main (2)/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.AssemblyInfo.cs
+c:/Users/pci135/Downloads/pizzashop_final_1-main-main-main-main (2)/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.CoreCompileInputs.cache
+c:/Users/pci135/Downloads/pizzashop_final_1-main-main-main-main (2)/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.CopyComplete
+c:/Users/pci135/Downloads/pizzashop_final_1-main-main-main-main (2)/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.dll
+c:/Users/pci135/Downloads/pizzashop_final_1-main-main-main-main (2)/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/refint/pizzashop_Services.dll
+c:/Users/pci135/Downloads/pizzashop_final_1-main-main-main-main (2)/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.pdb
+c:/Users/pci135/Downloads/pizzashop_final_1-main-main-main-main (2)/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/ref/pizzashop_Services.dll
+c:/Users/kotad/Downloads/pizzashopFinal-main (8)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.deps.json
+c:/Users/kotad/Downloads/pizzashopFinal-main (8)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.dll
+c:/Users/kotad/Downloads/pizzashopFinal-main (8)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.pdb
+c:/Users/kotad/Downloads/pizzashopFinal-main (8)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/bin/Debug/net7.0/pizzashop_Repository.dll
+c:/Users/kotad/Downloads/pizzashopFinal-main (8)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/bin/Debug/net7.0/pizzashop_Repository.pdb
+c:/Users/kotad/Downloads/pizzashopFinal-main (8)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.AssemblyReference.cache
+c:/Users/kotad/Downloads/pizzashopFinal-main (8)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.GeneratedMSBuildEditorConfig.editorconfig
+c:/Users/kotad/Downloads/pizzashopFinal-main (8)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.AssemblyInfoInputs.cache
+c:/Users/kotad/Downloads/pizzashopFinal-main (8)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.AssemblyInfo.cs
+c:/Users/kotad/Downloads/pizzashopFinal-main (8)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.CoreCompileInputs.cache
+c:/Users/kotad/Downloads/pizzashopFinal-main (8)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.CopyComplete
+c:/Users/kotad/Downloads/pizzashopFinal-main (8)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.dll
+c:/Users/kotad/Downloads/pizzashopFinal-main (8)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/refint/pizzashop_Services.dll
+c:/Users/kotad/Downloads/pizzashopFinal-main (8)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.pdb
+c:/Users/kotad/Downloads/pizzashopFinal-main (8)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/ref/pizzashop_Services.dll
+C:/Users/kotad/Downloads/pizzashop_mvc-main-main (2)/pizzashop_mvc-main-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.deps.json
+C:/Users/kotad/Downloads/pizzashop_mvc-main-main (2)/pizzashop_mvc-main-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.dll
+C:/Users/kotad/Downloads/pizzashop_mvc-main-main (2)/pizzashop_mvc-main-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.pdb
+C:/Users/kotad/Downloads/pizzashop_mvc-main-main (2)/pizzashop_mvc-main-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Repository.dll
+C:/Users/kotad/Downloads/pizzashop_mvc-main-main (2)/pizzashop_mvc-main-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Repository.pdb
+C:/Users/kotad/Downloads/pizzashop_mvc-main-main (2)/pizzashop_mvc-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.AssemblyReference.cache
+C:/Users/kotad/Downloads/pizzashop_mvc-main-main (2)/pizzashop_mvc-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/kotad/Downloads/pizzashop_mvc-main-main (2)/pizzashop_mvc-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.AssemblyInfoInputs.cache
+C:/Users/kotad/Downloads/pizzashop_mvc-main-main (2)/pizzashop_mvc-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.AssemblyInfo.cs
+C:/Users/kotad/Downloads/pizzashop_mvc-main-main (2)/pizzashop_mvc-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.CoreCompileInputs.cache
+C:/Users/kotad/Downloads/pizzashop_mvc-main-main (2)/pizzashop_mvc-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.CopyComplete
+C:/Users/kotad/Downloads/pizzashop_mvc-main-main (2)/pizzashop_mvc-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.dll
+C:/Users/kotad/Downloads/pizzashop_mvc-main-main (2)/pizzashop_mvc-main-main/pizzashop_Services/obj/Debug/net7.0/refint/pizzashop_Services.dll
+C:/Users/kotad/Downloads/pizzashop_mvc-main-main (2)/pizzashop_mvc-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.pdb
+C:/Users/kotad/Downloads/pizzashop_mvc-main-main (2)/pizzashop_mvc-main-main/pizzashop_Services/obj/Debug/net7.0/ref/pizzashop_Services.dll
+c:/Users/kotad/Downloads/pizzashopFinal-main (9)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.deps.json
+c:/Users/kotad/Downloads/pizzashopFinal-main (9)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.dll
+c:/Users/kotad/Downloads/pizzashopFinal-main (9)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.pdb
+c:/Users/kotad/Downloads/pizzashopFinal-main (9)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/bin/Debug/net7.0/pizzashop_Repository.dll
+c:/Users/kotad/Downloads/pizzashopFinal-main (9)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/bin/Debug/net7.0/pizzashop_Repository.pdb
+c:/Users/kotad/Downloads/pizzashopFinal-main (9)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.AssemblyReference.cache
+c:/Users/kotad/Downloads/pizzashopFinal-main (9)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.GeneratedMSBuildEditorConfig.editorconfig
+c:/Users/kotad/Downloads/pizzashopFinal-main (9)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.AssemblyInfoInputs.cache
+c:/Users/kotad/Downloads/pizzashopFinal-main (9)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.AssemblyInfo.cs
+c:/Users/kotad/Downloads/pizzashopFinal-main (9)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.CoreCompileInputs.cache
+c:/Users/kotad/Downloads/pizzashopFinal-main (9)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.CopyComplete
+c:/Users/kotad/Downloads/pizzashopFinal-main (9)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.dll
+c:/Users/kotad/Downloads/pizzashopFinal-main (9)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/refint/pizzashop_Services.dll
+c:/Users/kotad/Downloads/pizzashopFinal-main (9)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.pdb
+c:/Users/kotad/Downloads/pizzashopFinal-main (9)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/ref/pizzashop_Services.dll
+c:/Users/kotad/Downloads/pizzashopFinal-main-main/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.deps.json
+c:/Users/kotad/Downloads/pizzashopFinal-main-main/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.dll
+c:/Users/kotad/Downloads/pizzashopFinal-main-main/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.pdb
+c:/Users/kotad/Downloads/pizzashopFinal-main-main/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/bin/Debug/net7.0/pizzashop_Repository.dll
+c:/Users/kotad/Downloads/pizzashopFinal-main-main/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/bin/Debug/net7.0/pizzashop_Repository.pdb
+c:/Users/kotad/Downloads/pizzashopFinal-main-main/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.AssemblyReference.cache
+c:/Users/kotad/Downloads/pizzashopFinal-main-main/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.GeneratedMSBuildEditorConfig.editorconfig
+c:/Users/kotad/Downloads/pizzashopFinal-main-main/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.AssemblyInfoInputs.cache
+c:/Users/kotad/Downloads/pizzashopFinal-main-main/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.AssemblyInfo.cs
+c:/Users/kotad/Downloads/pizzashopFinal-main-main/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.CoreCompileInputs.cache
+c:/Users/kotad/Downloads/pizzashopFinal-main-main/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.CopyComplete
+c:/Users/kotad/Downloads/pizzashopFinal-main-main/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.dll
+c:/Users/kotad/Downloads/pizzashopFinal-main-main/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/refint/pizzashop_Services.dll
+c:/Users/kotad/Downloads/pizzashopFinal-main-main/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.pdb
+c:/Users/kotad/Downloads/pizzashopFinal-main-main/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/ref/pizzashop_Services.dll
+c:/Users/pci135/Downloads/pizzashopFinal-main/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.deps.json
+c:/Users/pci135/Downloads/pizzashopFinal-main/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.dll
+c:/Users/pci135/Downloads/pizzashopFinal-main/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.pdb
+c:/Users/pci135/Downloads/pizzashopFinal-main/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/bin/Debug/net7.0/pizzashop_Repository.dll
+c:/Users/pci135/Downloads/pizzashopFinal-main/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/bin/Debug/net7.0/pizzashop_Repository.pdb
+c:/Users/pci135/Downloads/pizzashopFinal-main/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.AssemblyReference.cache
+c:/Users/pci135/Downloads/pizzashopFinal-main/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.GeneratedMSBuildEditorConfig.editorconfig
+c:/Users/pci135/Downloads/pizzashopFinal-main/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.AssemblyInfoInputs.cache
+c:/Users/pci135/Downloads/pizzashopFinal-main/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.AssemblyInfo.cs
+c:/Users/pci135/Downloads/pizzashopFinal-main/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.CoreCompileInputs.cache
+c:/Users/pci135/Downloads/pizzashopFinal-main/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.CopyComplete
+c:/Users/pci135/Downloads/pizzashopFinal-main/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.dll
+c:/Users/pci135/Downloads/pizzashopFinal-main/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/refint/pizzashop_Services.dll
+c:/Users/pci135/Downloads/pizzashopFinal-main/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.pdb
+c:/Users/pci135/Downloads/pizzashopFinal-main/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/ref/pizzashop_Services.dll
+c:/Users/kotad/Downloads/pizzashop_mvc_main-main/pizzashop_mvc_main-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.deps.json
+c:/Users/kotad/Downloads/pizzashop_mvc_main-main/pizzashop_mvc_main-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.dll
+c:/Users/kotad/Downloads/pizzashop_mvc_main-main/pizzashop_mvc_main-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.pdb
+c:/Users/kotad/Downloads/pizzashop_mvc_main-main/pizzashop_mvc_main-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Repository.dll
+c:/Users/kotad/Downloads/pizzashop_mvc_main-main/pizzashop_mvc_main-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Repository.pdb
+c:/Users/kotad/Downloads/pizzashop_mvc_main-main/pizzashop_mvc_main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.AssemblyReference.cache
+c:/Users/kotad/Downloads/pizzashop_mvc_main-main/pizzashop_mvc_main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.GeneratedMSBuildEditorConfig.editorconfig
+c:/Users/kotad/Downloads/pizzashop_mvc_main-main/pizzashop_mvc_main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.AssemblyInfoInputs.cache
+c:/Users/kotad/Downloads/pizzashop_mvc_main-main/pizzashop_mvc_main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.AssemblyInfo.cs
+c:/Users/kotad/Downloads/pizzashop_mvc_main-main/pizzashop_mvc_main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.CoreCompileInputs.cache
+c:/Users/kotad/Downloads/pizzashop_mvc_main-main/pizzashop_mvc_main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.CopyComplete
+c:/Users/kotad/Downloads/pizzashop_mvc_main-main/pizzashop_mvc_main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.dll
+c:/Users/kotad/Downloads/pizzashop_mvc_main-main/pizzashop_mvc_main-main/pizzashop_Services/obj/Debug/net7.0/refint/pizzashop_Services.dll
+c:/Users/kotad/Downloads/pizzashop_mvc_main-main/pizzashop_mvc_main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.pdb
+c:/Users/kotad/Downloads/pizzashop_mvc_main-main/pizzashop_mvc_main-main/pizzashop_Services/obj/Debug/net7.0/ref/pizzashop_Services.dll
+c:/Users/pci135/Downloads/pizzashop_mvc_main-main-main/pizzashop_mvc_main-main-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.deps.json
+c:/Users/pci135/Downloads/pizzashop_mvc_main-main-main/pizzashop_mvc_main-main-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.dll
+c:/Users/pci135/Downloads/pizzashop_mvc_main-main-main/pizzashop_mvc_main-main-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.pdb
+c:/Users/pci135/Downloads/pizzashop_mvc_main-main-main/pizzashop_mvc_main-main-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Repository.dll
+c:/Users/pci135/Downloads/pizzashop_mvc_main-main-main/pizzashop_mvc_main-main-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Repository.pdb
+c:/Users/pci135/Downloads/pizzashop_mvc_main-main-main/pizzashop_mvc_main-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.AssemblyReference.cache
+c:/Users/pci135/Downloads/pizzashop_mvc_main-main-main/pizzashop_mvc_main-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.GeneratedMSBuildEditorConfig.editorconfig
+c:/Users/pci135/Downloads/pizzashop_mvc_main-main-main/pizzashop_mvc_main-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.AssemblyInfoInputs.cache
+c:/Users/pci135/Downloads/pizzashop_mvc_main-main-main/pizzashop_mvc_main-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.AssemblyInfo.cs
+c:/Users/pci135/Downloads/pizzashop_mvc_main-main-main/pizzashop_mvc_main-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.CoreCompileInputs.cache
+c:/Users/pci135/Downloads/pizzashop_mvc_main-main-main/pizzashop_mvc_main-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.CopyComplete
+c:/Users/pci135/Downloads/pizzashop_mvc_main-main-main/pizzashop_mvc_main-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.dll
+c:/Users/pci135/Downloads/pizzashop_mvc_main-main-main/pizzashop_mvc_main-main-main/pizzashop_Services/obj/Debug/net7.0/refint/pizzashop_Services.dll
+c:/Users/pci135/Downloads/pizzashop_mvc_main-main-main/pizzashop_mvc_main-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.pdb
+c:/Users/pci135/Downloads/pizzashop_mvc_main-main-main/pizzashop_mvc_main-main-main/pizzashop_Services/obj/Debug/net7.0/ref/pizzashop_Services.dll
+d:/pizzashop_final/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.deps.json
+d:/pizzashop_final/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.dll
+d:/pizzashop_final/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.pdb
+d:/pizzashop_final/pizzashop_Services/bin/Debug/net7.0/pizzashop_Repository.dll
+d:/pizzashop_final/pizzashop_Services/bin/Debug/net7.0/pizzashop_Repository.pdb
+d:/pizzashop_final/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.AssemblyReference.cache
+d:/pizzashop_final/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.GeneratedMSBuildEditorConfig.editorconfig
+d:/pizzashop_final/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.AssemblyInfoInputs.cache
+d:/pizzashop_final/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.AssemblyInfo.cs
+d:/pizzashop_final/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.CoreCompileInputs.cache
+d:/pizzashop_final/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.CopyComplete
+d:/pizzashop_final/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.dll
+d:/pizzashop_final/pizzashop_Services/obj/Debug/net7.0/refint/pizzashop_Services.dll
+d:/pizzashop_final/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.pdb
+d:/pizzashop_final/pizzashop_Services/obj/Debug/net7.0/ref/pizzashop_Services.dll
+c:/Users/kotad/Downloads/pizzashopFinal-main (11)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.deps.json
+c:/Users/kotad/Downloads/pizzashopFinal-main (11)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.dll
+c:/Users/kotad/Downloads/pizzashopFinal-main (11)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.pdb
+c:/Users/kotad/Downloads/pizzashopFinal-main (11)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/bin/Debug/net7.0/pizzashop_Repository.dll
+c:/Users/kotad/Downloads/pizzashopFinal-main (11)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/bin/Debug/net7.0/pizzashop_Repository.pdb
+c:/Users/kotad/Downloads/pizzashopFinal-main (11)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.AssemblyReference.cache
+c:/Users/kotad/Downloads/pizzashopFinal-main (11)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.GeneratedMSBuildEditorConfig.editorconfig
+c:/Users/kotad/Downloads/pizzashopFinal-main (11)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.AssemblyInfoInputs.cache
+c:/Users/kotad/Downloads/pizzashopFinal-main (11)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.AssemblyInfo.cs
+c:/Users/kotad/Downloads/pizzashopFinal-main (11)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.CoreCompileInputs.cache
+c:/Users/kotad/Downloads/pizzashopFinal-main (11)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.CopyComplete
+c:/Users/kotad/Downloads/pizzashopFinal-main (11)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.dll
+c:/Users/kotad/Downloads/pizzashopFinal-main (11)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/refint/pizzashop_Services.dll
+c:/Users/kotad/Downloads/pizzashopFinal-main (11)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.pdb
+c:/Users/kotad/Downloads/pizzashopFinal-main (11)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/ref/pizzashop_Services.dll
+c:/Users/pci135/Downloads/pizzashop_mvc1-main/pizzashop_mvc1-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.deps.json
+c:/Users/pci135/Downloads/pizzashop_mvc1-main/pizzashop_mvc1-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.dll
+c:/Users/pci135/Downloads/pizzashop_mvc1-main/pizzashop_mvc1-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.pdb
+c:/Users/pci135/Downloads/pizzashop_mvc1-main/pizzashop_mvc1-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Repository.dll
+c:/Users/pci135/Downloads/pizzashop_mvc1-main/pizzashop_mvc1-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Repository.pdb
+c:/Users/pci135/Downloads/pizzashop_mvc1-main/pizzashop_mvc1-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.AssemblyReference.cache
+c:/Users/pci135/Downloads/pizzashop_mvc1-main/pizzashop_mvc1-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.GeneratedMSBuildEditorConfig.editorconfig
+c:/Users/pci135/Downloads/pizzashop_mvc1-main/pizzashop_mvc1-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.AssemblyInfoInputs.cache
+c:/Users/pci135/Downloads/pizzashop_mvc1-main/pizzashop_mvc1-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.AssemblyInfo.cs
+c:/Users/pci135/Downloads/pizzashop_mvc1-main/pizzashop_mvc1-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.CoreCompileInputs.cache
+c:/Users/pci135/Downloads/pizzashop_mvc1-main/pizzashop_mvc1-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.CopyComplete
+c:/Users/pci135/Downloads/pizzashop_mvc1-main/pizzashop_mvc1-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.dll
+c:/Users/pci135/Downloads/pizzashop_mvc1-main/pizzashop_mvc1-main/pizzashop_Services/obj/Debug/net7.0/refint/pizzashop_Services.dll
+c:/Users/pci135/Downloads/pizzashop_mvc1-main/pizzashop_mvc1-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.pdb
+c:/Users/pci135/Downloads/pizzashop_mvc1-main/pizzashop_mvc1-main/pizzashop_Services/obj/Debug/net7.0/ref/pizzashop_Services.dll
+c:/Users/kotad/Downloads/pizzashopFinal-main (12)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.deps.json
+c:/Users/kotad/Downloads/pizzashopFinal-main (12)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.dll
+c:/Users/kotad/Downloads/pizzashopFinal-main (12)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.pdb
+c:/Users/kotad/Downloads/pizzashopFinal-main (12)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/bin/Debug/net7.0/pizzashop_Repository.dll
+c:/Users/kotad/Downloads/pizzashopFinal-main (12)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/bin/Debug/net7.0/pizzashop_Repository.pdb
+c:/Users/kotad/Downloads/pizzashopFinal-main (12)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.AssemblyReference.cache
+c:/Users/kotad/Downloads/pizzashopFinal-main (12)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.GeneratedMSBuildEditorConfig.editorconfig
+c:/Users/kotad/Downloads/pizzashopFinal-main (12)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.AssemblyInfoInputs.cache
+c:/Users/kotad/Downloads/pizzashopFinal-main (12)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.AssemblyInfo.cs
+c:/Users/kotad/Downloads/pizzashopFinal-main (12)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.CoreCompileInputs.cache
+c:/Users/kotad/Downloads/pizzashopFinal-main (12)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.CopyComplete
+c:/Users/kotad/Downloads/pizzashopFinal-main (12)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.dll
+c:/Users/kotad/Downloads/pizzashopFinal-main (12)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/refint/pizzashop_Services.dll
+c:/Users/kotad/Downloads/pizzashopFinal-main (12)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.pdb
+c:/Users/kotad/Downloads/pizzashopFinal-main (12)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/ref/pizzashop_Services.dll
+c:/Users/pci135/Downloads/pizzashop_mvc_--master/pizzashop_mvc_--master/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.deps.json
+c:/Users/pci135/Downloads/pizzashop_mvc_--master/pizzashop_mvc_--master/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.dll
+c:/Users/pci135/Downloads/pizzashop_mvc_--master/pizzashop_mvc_--master/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.pdb
+c:/Users/pci135/Downloads/pizzashop_mvc_--master/pizzashop_mvc_--master/pizzashop_Services/bin/Debug/net7.0/pizzashop_Repository.dll
+c:/Users/pci135/Downloads/pizzashop_mvc_--master/pizzashop_mvc_--master/pizzashop_Services/bin/Debug/net7.0/pizzashop_Repository.pdb
+c:/Users/pci135/Downloads/pizzashop_mvc_--master/pizzashop_mvc_--master/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.AssemblyReference.cache
+c:/Users/pci135/Downloads/pizzashop_mvc_--master/pizzashop_mvc_--master/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.GeneratedMSBuildEditorConfig.editorconfig
+c:/Users/pci135/Downloads/pizzashop_mvc_--master/pizzashop_mvc_--master/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.AssemblyInfoInputs.cache
+c:/Users/pci135/Downloads/pizzashop_mvc_--master/pizzashop_mvc_--master/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.AssemblyInfo.cs
+c:/Users/pci135/Downloads/pizzashop_mvc_--master/pizzashop_mvc_--master/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.CoreCompileInputs.cache
+c:/Users/pci135/Downloads/pizzashop_mvc_--master/pizzashop_mvc_--master/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.CopyComplete
+c:/Users/pci135/Downloads/pizzashop_mvc_--master/pizzashop_mvc_--master/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.dll
+c:/Users/pci135/Downloads/pizzashop_mvc_--master/pizzashop_mvc_--master/pizzashop_Services/obj/Debug/net7.0/refint/pizzashop_Services.dll
+c:/Users/pci135/Downloads/pizzashop_mvc_--master/pizzashop_mvc_--master/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.pdb
+c:/Users/pci135/Downloads/pizzashop_mvc_--master/pizzashop_mvc_--master/pizzashop_Services/obj/Debug/net7.0/ref/pizzashop_Services.dll
+d:/PizzaShop/PizzaShop/pizzashopFinal/pizzashop_mvc/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.deps.json
+d:/PizzaShop/PizzaShop/pizzashopFinal/pizzashop_mvc/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.dll
+d:/PizzaShop/PizzaShop/pizzashopFinal/pizzashop_mvc/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.pdb
+d:/PizzaShop/PizzaShop/pizzashopFinal/pizzashop_mvc/pizzashop_Services/bin/Debug/net7.0/pizzashop_Repository.dll
+d:/PizzaShop/PizzaShop/pizzashopFinal/pizzashop_mvc/pizzashop_Services/bin/Debug/net7.0/pizzashop_Repository.pdb
+d:/PizzaShop/PizzaShop/pizzashopFinal/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.AssemblyReference.cache
+d:/PizzaShop/PizzaShop/pizzashopFinal/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.GeneratedMSBuildEditorConfig.editorconfig
+d:/PizzaShop/PizzaShop/pizzashopFinal/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.AssemblyInfoInputs.cache
+d:/PizzaShop/PizzaShop/pizzashopFinal/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.AssemblyInfo.cs
+d:/PizzaShop/PizzaShop/pizzashopFinal/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.CoreCompileInputs.cache
+d:/PizzaShop/PizzaShop/pizzashopFinal/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.CopyComplete
+d:/PizzaShop/PizzaShop/pizzashopFinal/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.dll
+d:/PizzaShop/PizzaShop/pizzashopFinal/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/refint/pizzashop_Services.dll
+d:/PizzaShop/PizzaShop/pizzashopFinal/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.pdb
+d:/PizzaShop/PizzaShop/pizzashopFinal/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/ref/pizzashop_Services.dll
+c:/Users/kotad/Downloads/pizzashopFinal-main/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.deps.json
+c:/Users/kotad/Downloads/pizzashopFinal-main/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.dll
+c:/Users/kotad/Downloads/pizzashopFinal-main/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.pdb
+c:/Users/kotad/Downloads/pizzashopFinal-main/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/bin/Debug/net7.0/pizzashop_Repository.dll
+c:/Users/kotad/Downloads/pizzashopFinal-main/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/bin/Debug/net7.0/pizzashop_Repository.pdb
+c:/Users/kotad/Downloads/pizzashopFinal-main/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.AssemblyReference.cache
+c:/Users/kotad/Downloads/pizzashopFinal-main/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.GeneratedMSBuildEditorConfig.editorconfig
+c:/Users/kotad/Downloads/pizzashopFinal-main/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.AssemblyInfoInputs.cache
+c:/Users/kotad/Downloads/pizzashopFinal-main/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.AssemblyInfo.cs
+c:/Users/kotad/Downloads/pizzashopFinal-main/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.CoreCompileInputs.cache
+c:/Users/kotad/Downloads/pizzashopFinal-main/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.CopyComplete
+c:/Users/kotad/Downloads/pizzashopFinal-main/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.dll
+c:/Users/kotad/Downloads/pizzashopFinal-main/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/refint/pizzashop_Services.dll
+c:/Users/kotad/Downloads/pizzashopFinal-main/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.pdb
+c:/Users/kotad/Downloads/pizzashopFinal-main/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/ref/pizzashop_Services.dll
+c:/Users/pci135/Downloads/pizzashop_mvc_mvc-main/pizzashop_mvc_mvc-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.deps.json
+c:/Users/pci135/Downloads/pizzashop_mvc_mvc-main/pizzashop_mvc_mvc-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.dll
+c:/Users/pci135/Downloads/pizzashop_mvc_mvc-main/pizzashop_mvc_mvc-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.pdb
+c:/Users/pci135/Downloads/pizzashop_mvc_mvc-main/pizzashop_mvc_mvc-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Repository.dll
+c:/Users/pci135/Downloads/pizzashop_mvc_mvc-main/pizzashop_mvc_mvc-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Repository.pdb
+c:/Users/pci135/Downloads/pizzashop_mvc_mvc-main/pizzashop_mvc_mvc-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.AssemblyReference.cache
+c:/Users/pci135/Downloads/pizzashop_mvc_mvc-main/pizzashop_mvc_mvc-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.GeneratedMSBuildEditorConfig.editorconfig
+c:/Users/pci135/Downloads/pizzashop_mvc_mvc-main/pizzashop_mvc_mvc-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.AssemblyInfoInputs.cache
+c:/Users/pci135/Downloads/pizzashop_mvc_mvc-main/pizzashop_mvc_mvc-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.AssemblyInfo.cs
+c:/Users/pci135/Downloads/pizzashop_mvc_mvc-main/pizzashop_mvc_mvc-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.CoreCompileInputs.cache
+c:/Users/pci135/Downloads/pizzashop_mvc_mvc-main/pizzashop_mvc_mvc-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.CopyComplete
+c:/Users/pci135/Downloads/pizzashop_mvc_mvc-main/pizzashop_mvc_mvc-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.dll
+c:/Users/pci135/Downloads/pizzashop_mvc_mvc-main/pizzashop_mvc_mvc-main/pizzashop_Services/obj/Debug/net7.0/refint/pizzashop_Services.dll
+c:/Users/pci135/Downloads/pizzashop_mvc_mvc-main/pizzashop_mvc_mvc-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.pdb
+c:/Users/pci135/Downloads/pizzashop_mvc_mvc-main/pizzashop_mvc_mvc-main/pizzashop_Services/obj/Debug/net7.0/ref/pizzashop_Services.dll
+C:/Users/kotad/Downloads/pizzashop_mvc_mvc-main-main (1)/pizzashop_mvc_mvc-main-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.deps.json
+C:/Users/kotad/Downloads/pizzashop_mvc_mvc-main-main (1)/pizzashop_mvc_mvc-main-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.dll
+C:/Users/kotad/Downloads/pizzashop_mvc_mvc-main-main (1)/pizzashop_mvc_mvc-main-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.pdb
+C:/Users/kotad/Downloads/pizzashop_mvc_mvc-main-main (1)/pizzashop_mvc_mvc-main-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Repository.dll
+C:/Users/kotad/Downloads/pizzashop_mvc_mvc-main-main (1)/pizzashop_mvc_mvc-main-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Repository.pdb
+C:/Users/kotad/Downloads/pizzashop_mvc_mvc-main-main (1)/pizzashop_mvc_mvc-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.AssemblyReference.cache
+C:/Users/kotad/Downloads/pizzashop_mvc_mvc-main-main (1)/pizzashop_mvc_mvc-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/kotad/Downloads/pizzashop_mvc_mvc-main-main (1)/pizzashop_mvc_mvc-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.AssemblyInfoInputs.cache
+C:/Users/kotad/Downloads/pizzashop_mvc_mvc-main-main (1)/pizzashop_mvc_mvc-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.AssemblyInfo.cs
+C:/Users/kotad/Downloads/pizzashop_mvc_mvc-main-main (1)/pizzashop_mvc_mvc-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.CoreCompileInputs.cache
+C:/Users/kotad/Downloads/pizzashop_mvc_mvc-main-main (1)/pizzashop_mvc_mvc-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.CopyComplete
+C:/Users/kotad/Downloads/pizzashop_mvc_mvc-main-main (1)/pizzashop_mvc_mvc-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.dll
+C:/Users/kotad/Downloads/pizzashop_mvc_mvc-main-main (1)/pizzashop_mvc_mvc-main-main/pizzashop_Services/obj/Debug/net7.0/refint/pizzashop_Services.dll
+C:/Users/kotad/Downloads/pizzashop_mvc_mvc-main-main (1)/pizzashop_mvc_mvc-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.pdb
+C:/Users/kotad/Downloads/pizzashop_mvc_mvc-main-main (1)/pizzashop_mvc_mvc-main-main/pizzashop_Services/obj/Debug/net7.0/ref/pizzashop_Services.dll
+d:/pizzashopFinal/pizzashopFinal/pizzashop_mvc/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.deps.json
+d:/pizzashopFinal/pizzashopFinal/pizzashop_mvc/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.dll
+d:/pizzashopFinal/pizzashopFinal/pizzashop_mvc/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.pdb
+d:/pizzashopFinal/pizzashopFinal/pizzashop_mvc/pizzashop_Services/bin/Debug/net7.0/pizzashop_Repository.dll
+d:/pizzashopFinal/pizzashopFinal/pizzashop_mvc/pizzashop_Services/bin/Debug/net7.0/pizzashop_Repository.pdb
+d:/pizzashopFinal/pizzashopFinal/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.AssemblyReference.cache
+d:/pizzashopFinal/pizzashopFinal/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.GeneratedMSBuildEditorConfig.editorconfig
+d:/pizzashopFinal/pizzashopFinal/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.AssemblyInfoInputs.cache
+d:/pizzashopFinal/pizzashopFinal/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.AssemblyInfo.cs
+d:/pizzashopFinal/pizzashopFinal/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.CoreCompileInputs.cache
+d:/pizzashopFinal/pizzashopFinal/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.CopyComplete
+d:/pizzashopFinal/pizzashopFinal/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.dll
+d:/pizzashopFinal/pizzashopFinal/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/refint/pizzashop_Services.dll
+d:/pizzashopFinal/pizzashopFinal/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.pdb
+d:/pizzashopFinal/pizzashopFinal/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/ref/pizzashop_Services.dll
+D:/pizzashop_main/pizzashopFinal/pizzashop_mvc/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.deps.json
+d:/pizzashop_main/pizzashopFinal/pizzashop_mvc/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.dll
+d:/pizzashop_main/pizzashopFinal/pizzashop_mvc/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.pdb
+d:/pizzashop_main/pizzashopFinal/pizzashop_mvc/pizzashop_Services/bin/Debug/net7.0/pizzashop_Repository.dll
+d:/pizzashop_main/pizzashopFinal/pizzashop_mvc/pizzashop_Services/bin/Debug/net7.0/pizzashop_Repository.pdb
+d:/pizzashop_main/pizzashopFinal/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.AssemblyReference.cache
+d:/pizzashop_main/pizzashopFinal/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.GeneratedMSBuildEditorConfig.editorconfig
+d:/pizzashop_main/pizzashopFinal/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.AssemblyInfoInputs.cache
+d:/pizzashop_main/pizzashopFinal/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.AssemblyInfo.cs
+d:/pizzashop_main/pizzashopFinal/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.CoreCompileInputs.cache
+D:/pizzashop_main/pizzashopFinal/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.CopyComplete
+d:/pizzashop_main/pizzashopFinal/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.dll
+d:/pizzashop_main/pizzashopFinal/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/refint/pizzashop_Services.dll
+d:/pizzashop_main/pizzashopFinal/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.pdb
+D:/pizzashop_main/pizzashopFinal/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/ref/pizzashop_Services.dll
+c:/Users/kotad/Downloads/pizzashopFinal-main (3)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.deps.json
+c:/Users/kotad/Downloads/pizzashopFinal-main (3)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.dll
+c:/Users/kotad/Downloads/pizzashopFinal-main (3)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.pdb
+c:/Users/kotad/Downloads/pizzashopFinal-main (3)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/bin/Debug/net7.0/pizzashop_Repository.dll
+c:/Users/kotad/Downloads/pizzashopFinal-main (3)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/bin/Debug/net7.0/pizzashop_Repository.pdb
+c:/Users/kotad/Downloads/pizzashopFinal-main (3)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.AssemblyReference.cache
+c:/Users/kotad/Downloads/pizzashopFinal-main (3)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.GeneratedMSBuildEditorConfig.editorconfig
+c:/Users/kotad/Downloads/pizzashopFinal-main (3)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.AssemblyInfoInputs.cache
+c:/Users/kotad/Downloads/pizzashopFinal-main (3)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.AssemblyInfo.cs
+c:/Users/kotad/Downloads/pizzashopFinal-main (3)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.CoreCompileInputs.cache
+c:/Users/kotad/Downloads/pizzashopFinal-main (3)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.CopyComplete
+c:/Users/kotad/Downloads/pizzashopFinal-main (3)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.dll
+c:/Users/kotad/Downloads/pizzashopFinal-main (3)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/refint/pizzashop_Services.dll
+c:/Users/kotad/Downloads/pizzashopFinal-main (3)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.pdb
+c:/Users/kotad/Downloads/pizzashopFinal-main (3)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/ref/pizzashop_Services.dll
+C:/Users/kotad/Downloads/pizzashop_mvc_final-main-main/pizzashop_mvc_final-main-main/pizzashop_Services/bin/Debug/net7.0/Select.Html.dep
+C:/Users/kotad/Downloads/pizzashop_mvc_final-main-main/pizzashop_mvc_final-main-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.deps.json
+C:/Users/kotad/Downloads/pizzashop_mvc_final-main-main/pizzashop_mvc_final-main-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.dll
+C:/Users/kotad/Downloads/pizzashop_mvc_final-main-main/pizzashop_mvc_final-main-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.pdb
+C:/Users/kotad/Downloads/pizzashop_mvc_final-main-main/pizzashop_mvc_final-main-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Repository.dll
+C:/Users/kotad/Downloads/pizzashop_mvc_final-main-main/pizzashop_mvc_final-main-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Repository.pdb
+C:/Users/kotad/Downloads/pizzashop_mvc_final-main-main/pizzashop_mvc_final-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.AssemblyReference.cache
+C:/Users/kotad/Downloads/pizzashop_mvc_final-main-main/pizzashop_mvc_final-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/kotad/Downloads/pizzashop_mvc_final-main-main/pizzashop_mvc_final-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.AssemblyInfoInputs.cache
+C:/Users/kotad/Downloads/pizzashop_mvc_final-main-main/pizzashop_mvc_final-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.AssemblyInfo.cs
+C:/Users/kotad/Downloads/pizzashop_mvc_final-main-main/pizzashop_mvc_final-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.CoreCompileInputs.cache
+C:/Users/kotad/Downloads/pizzashop_mvc_final-main-main/pizzashop_mvc_final-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.CopyComplete
+C:/Users/kotad/Downloads/pizzashop_mvc_final-main-main/pizzashop_mvc_final-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.dll
+C:/Users/kotad/Downloads/pizzashop_mvc_final-main-main/pizzashop_mvc_final-main-main/pizzashop_Services/obj/Debug/net7.0/refint/pizzashop_Services.dll
+C:/Users/kotad/Downloads/pizzashop_mvc_final-main-main/pizzashop_mvc_final-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.pdb
+C:/Users/kotad/Downloads/pizzashop_mvc_final-main-main/pizzashop_mvc_final-main-main/pizzashop_Services/obj/Debug/net7.0/ref/pizzashop_Services.dll
+c:/Users/kotad/Downloads/pizzashop_mvc_final-main-main (1)/pizzashop_mvc_final-main-main/pizzashop_Services/bin/Debug/net7.0/Select.Html.dep
+c:/Users/kotad/Downloads/pizzashop_mvc_final-main-main (1)/pizzashop_mvc_final-main-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.deps.json
+c:/Users/kotad/Downloads/pizzashop_mvc_final-main-main (1)/pizzashop_mvc_final-main-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.dll
+c:/Users/kotad/Downloads/pizzashop_mvc_final-main-main (1)/pizzashop_mvc_final-main-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.pdb
+c:/Users/kotad/Downloads/pizzashop_mvc_final-main-main (1)/pizzashop_mvc_final-main-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Repository.dll
+c:/Users/kotad/Downloads/pizzashop_mvc_final-main-main (1)/pizzashop_mvc_final-main-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Repository.pdb
+c:/Users/kotad/Downloads/pizzashop_mvc_final-main-main (1)/pizzashop_mvc_final-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.AssemblyReference.cache
+c:/Users/kotad/Downloads/pizzashop_mvc_final-main-main (1)/pizzashop_mvc_final-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.GeneratedMSBuildEditorConfig.editorconfig
+c:/Users/kotad/Downloads/pizzashop_mvc_final-main-main (1)/pizzashop_mvc_final-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.AssemblyInfoInputs.cache
+c:/Users/kotad/Downloads/pizzashop_mvc_final-main-main (1)/pizzashop_mvc_final-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.AssemblyInfo.cs
+c:/Users/kotad/Downloads/pizzashop_mvc_final-main-main (1)/pizzashop_mvc_final-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.CoreCompileInputs.cache
+c:/Users/kotad/Downloads/pizzashop_mvc_final-main-main (1)/pizzashop_mvc_final-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.CopyComplete
+c:/Users/kotad/Downloads/pizzashop_mvc_final-main-main (1)/pizzashop_mvc_final-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.dll
+c:/Users/kotad/Downloads/pizzashop_mvc_final-main-main (1)/pizzashop_mvc_final-main-main/pizzashop_Services/obj/Debug/net7.0/refint/pizzashop_Services.dll
+c:/Users/kotad/Downloads/pizzashop_mvc_final-main-main (1)/pizzashop_mvc_final-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.pdb
+c:/Users/kotad/Downloads/pizzashop_mvc_final-main-main (1)/pizzashop_mvc_final-main-main/pizzashop_Services/obj/Debug/net7.0/ref/pizzashop_Services.dll
+C:/Users/kotad/Downloads/pizzashop_mvc_final-main-main (4)/pizzashop_mvc_final-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.dll
+C:/Users/kotad/Downloads/pizzashop_mvc_final-main-main (4)/pizzashop_mvc_final-main-main/pizzashop_Services/obj/Debug/net7.0/refint/pizzashop_Services.dll
+C:/Users/kotad/Downloads/pizzashop_mvc_final-main-main (4)/pizzashop_mvc_final-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.pdb
+C:/Users/kotad/Downloads/pizzashop_mvc_final-main-main (4)/pizzashop_mvc_final-main-main/pizzashop_Services/bin/Debug/net7.0/Select.Html.dep
+C:/Users/kotad/Downloads/pizzashop_mvc_final-main-main (4)/pizzashop_mvc_final-main-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.deps.json
+C:/Users/kotad/Downloads/pizzashop_mvc_final-main-main (4)/pizzashop_mvc_final-main-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.dll
+C:/Users/kotad/Downloads/pizzashop_mvc_final-main-main (4)/pizzashop_mvc_final-main-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.pdb
+C:/Users/kotad/Downloads/pizzashop_mvc_final-main-main (4)/pizzashop_mvc_final-main-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Repository.dll
+C:/Users/kotad/Downloads/pizzashop_mvc_final-main-main (4)/pizzashop_mvc_final-main-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Repository.pdb
+C:/Users/kotad/Downloads/pizzashop_mvc_final-main-main (4)/pizzashop_mvc_final-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.AssemblyReference.cache
+C:/Users/kotad/Downloads/pizzashop_mvc_final-main-main (4)/pizzashop_mvc_final-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/kotad/Downloads/pizzashop_mvc_final-main-main (4)/pizzashop_mvc_final-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.AssemblyInfoInputs.cache
+C:/Users/kotad/Downloads/pizzashop_mvc_final-main-main (4)/pizzashop_mvc_final-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.AssemblyInfo.cs
+C:/Users/kotad/Downloads/pizzashop_mvc_final-main-main (4)/pizzashop_mvc_final-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.CoreCompileInputs.cache
+C:/Users/kotad/Downloads/pizzashop_mvc_final-main-main (4)/pizzashop_mvc_final-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.CopyComplete
+C:/Users/kotad/Downloads/pizzashop_mvc_final-main-main (4)/pizzashop_mvc_final-main-main/pizzashop_Services/obj/Debug/net7.0/ref/pizzashop_Services.dll
+c:/Users/pci135/Downloads/pizzashop_mvc_final-main/pizzashop_mvc_final-main/pizzashop_Services/bin/Debug/net7.0/Select.Html.dep
+c:/Users/pci135/Downloads/pizzashop_mvc_final-main/pizzashop_mvc_final-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.deps.json
+c:/Users/pci135/Downloads/pizzashop_mvc_final-main/pizzashop_mvc_final-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.dll
+c:/Users/pci135/Downloads/pizzashop_mvc_final-main/pizzashop_mvc_final-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.pdb
+c:/Users/pci135/Downloads/pizzashop_mvc_final-main/pizzashop_mvc_final-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Repository.dll
+c:/Users/pci135/Downloads/pizzashop_mvc_final-main/pizzashop_mvc_final-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Repository.pdb
+c:/Users/pci135/Downloads/pizzashop_mvc_final-main/pizzashop_mvc_final-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.AssemblyReference.cache
+c:/Users/pci135/Downloads/pizzashop_mvc_final-main/pizzashop_mvc_final-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.GeneratedMSBuildEditorConfig.editorconfig
+c:/Users/pci135/Downloads/pizzashop_mvc_final-main/pizzashop_mvc_final-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.AssemblyInfoInputs.cache
+c:/Users/pci135/Downloads/pizzashop_mvc_final-main/pizzashop_mvc_final-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.AssemblyInfo.cs
+c:/Users/pci135/Downloads/pizzashop_mvc_final-main/pizzashop_mvc_final-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.CoreCompileInputs.cache
+c:/Users/pci135/Downloads/pizzashop_mvc_final-main/pizzashop_mvc_final-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.CopyComplete
+c:/Users/pci135/Downloads/pizzashop_mvc_final-main/pizzashop_mvc_final-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.dll
+c:/Users/pci135/Downloads/pizzashop_mvc_final-main/pizzashop_mvc_final-main/pizzashop_Services/obj/Debug/net7.0/refint/pizzashop_Services.dll
+c:/Users/pci135/Downloads/pizzashop_mvc_final-main/pizzashop_mvc_final-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.pdb
+c:/Users/pci135/Downloads/pizzashop_mvc_final-main/pizzashop_mvc_final-main/pizzashop_Services/obj/Debug/net7.0/ref/pizzashop_Services.dll
+c:/Users/kotad/Downloads/pizzashopFinal-main (7)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/bin/Debug/net7.0/Select.Html.dep
+C:/Users/kotad/Downloads/pizzashopFinal-main (7)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.deps.json
+c:/Users/kotad/Downloads/pizzashopFinal-main (7)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.dll
+c:/Users/kotad/Downloads/pizzashopFinal-main (7)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.pdb
+c:/Users/kotad/Downloads/pizzashopFinal-main (7)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/bin/Debug/net7.0/pizzashop_Repository.dll
+c:/Users/kotad/Downloads/pizzashopFinal-main (7)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/bin/Debug/net7.0/pizzashop_Repository.pdb
+c:/Users/kotad/Downloads/pizzashopFinal-main (7)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.AssemblyReference.cache
+c:/Users/kotad/Downloads/pizzashopFinal-main (7)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.GeneratedMSBuildEditorConfig.editorconfig
+c:/Users/kotad/Downloads/pizzashopFinal-main (7)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.AssemblyInfoInputs.cache
+c:/Users/kotad/Downloads/pizzashopFinal-main (7)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.AssemblyInfo.cs
+c:/Users/kotad/Downloads/pizzashopFinal-main (7)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.CoreCompileInputs.cache
+C:/Users/kotad/Downloads/pizzashopFinal-main (7)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.CopyComplete
+c:/Users/kotad/Downloads/pizzashopFinal-main (7)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.dll
+c:/Users/kotad/Downloads/pizzashopFinal-main (7)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/refint/pizzashop_Services.dll
+c:/Users/kotad/Downloads/pizzashopFinal-main (7)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.pdb
+C:/Users/kotad/Downloads/pizzashopFinal-main (7)/pizzashopFinal-main/pizzashop_mvc/pizzashop_Services/obj/Debug/net7.0/ref/pizzashop_Services.dll
+c:/Users/pci135/Downloads/pizzashop_mvc-main/pizzashop_mvc-main/pizzashop_Services/bin/Debug/net7.0/Select.Html.dep
+c:/Users/pci135/Downloads/pizzashop_mvc-main/pizzashop_mvc-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.deps.json
+c:/Users/pci135/Downloads/pizzashop_mvc-main/pizzashop_mvc-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.dll
+c:/Users/pci135/Downloads/pizzashop_mvc-main/pizzashop_mvc-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.pdb
+c:/Users/pci135/Downloads/pizzashop_mvc-main/pizzashop_mvc-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Repository.dll
+c:/Users/pci135/Downloads/pizzashop_mvc-main/pizzashop_mvc-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Repository.pdb
+c:/Users/pci135/Downloads/pizzashop_mvc-main/pizzashop_mvc-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.AssemblyReference.cache
+c:/Users/pci135/Downloads/pizzashop_mvc-main/pizzashop_mvc-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.GeneratedMSBuildEditorConfig.editorconfig
+c:/Users/pci135/Downloads/pizzashop_mvc-main/pizzashop_mvc-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.AssemblyInfoInputs.cache
+c:/Users/pci135/Downloads/pizzashop_mvc-main/pizzashop_mvc-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.AssemblyInfo.cs
+c:/Users/pci135/Downloads/pizzashop_mvc-main/pizzashop_mvc-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.CoreCompileInputs.cache
+c:/Users/pci135/Downloads/pizzashop_mvc-main/pizzashop_mvc-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.CopyComplete
+c:/Users/pci135/Downloads/pizzashop_mvc-main/pizzashop_mvc-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.dll
+c:/Users/pci135/Downloads/pizzashop_mvc-main/pizzashop_mvc-main/pizzashop_Services/obj/Debug/net7.0/refint/pizzashop_Services.dll
+c:/Users/pci135/Downloads/pizzashop_mvc-main/pizzashop_mvc-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.pdb
+c:/Users/pci135/Downloads/pizzashop_mvc-main/pizzashop_mvc-main/pizzashop_Services/obj/Debug/net7.0/ref/pizzashop_Services.dll
+C:/Users/kotad/Downloads/pizzashop_mvc-main-main/pizzashop_mvc-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.dll
+C:/Users/kotad/Downloads/pizzashop_mvc-main-main/pizzashop_mvc-main-main/pizzashop_Services/obj/Debug/net7.0/refint/pizzashop_Services.dll
+C:/Users/kotad/Downloads/pizzashop_mvc-main-main/pizzashop_mvc-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.pdb
+C:/Users/kotad/Downloads/pizzashop_mvc-main-main/pizzashop_mvc-main-main/pizzashop_Services/bin/Debug/net7.0/Select.Html.dep
+C:/Users/kotad/Downloads/pizzashop_mvc-main-main/pizzashop_mvc-main-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.deps.json
+C:/Users/kotad/Downloads/pizzashop_mvc-main-main/pizzashop_mvc-main-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.dll
+C:/Users/kotad/Downloads/pizzashop_mvc-main-main/pizzashop_mvc-main-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.pdb
+C:/Users/kotad/Downloads/pizzashop_mvc-main-main/pizzashop_mvc-main-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Repository.dll
+C:/Users/kotad/Downloads/pizzashop_mvc-main-main/pizzashop_mvc-main-main/pizzashop_Services/bin/Debug/net7.0/pizzashop_Repository.pdb
+C:/Users/kotad/Downloads/pizzashop_mvc-main-main/pizzashop_mvc-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.AssemblyReference.cache
+C:/Users/kotad/Downloads/pizzashop_mvc-main-main/pizzashop_mvc-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/kotad/Downloads/pizzashop_mvc-main-main/pizzashop_mvc-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.AssemblyInfoInputs.cache
+C:/Users/kotad/Downloads/pizzashop_mvc-main-main/pizzashop_mvc-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.AssemblyInfo.cs
+C:/Users/kotad/Downloads/pizzashop_mvc-main-main/pizzashop_mvc-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.CoreCompileInputs.cache
+C:/Users/kotad/Downloads/pizzashop_mvc-main-main/pizzashop_mvc-main-main/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.CopyComplete
+C:/Users/kotad/Downloads/pizzashop_mvc-main-main/pizzashop_mvc-main-main/pizzashop_Services/obj/Debug/net7.0/ref/pizzashop_Services.dll
+/workspaces/pizzashop/pizzashop_Services/bin/Debug/net7.0/Select.Html.dep
+/workspaces/pizzashop/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.deps.json
+/workspaces/pizzashop/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.dll
+/workspaces/pizzashop/pizzashop_Services/bin/Debug/net7.0/pizzashop_Services.pdb
+/workspaces/pizzashop/pizzashop_Services/bin/Debug/net7.0/pizzashop_Repository.dll
+/workspaces/pizzashop/pizzashop_Services/bin/Debug/net7.0/pizzashop_Repository.pdb
+/workspaces/pizzashop/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.AssemblyReference.cache
+/workspaces/pizzashop/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.GeneratedMSBuildEditorConfig.editorconfig
+/workspaces/pizzashop/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.AssemblyInfoInputs.cache
+/workspaces/pizzashop/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.AssemblyInfo.cs
+/workspaces/pizzashop/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.csproj.CoreCompileInputs.cache
+/workspaces/pizzashop/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.sourcelink.json
+/workspaces/pizzashop/pizzashop_Services/obj/Debug/net7.0/pizzasho.8D66788A.Up2Date
+/workspaces/pizzashop/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.dll
+/workspaces/pizzashop/pizzashop_Services/obj/Debug/net7.0/refint/pizzashop_Services.dll
+/workspaces/pizzashop/pizzashop_Services/obj/Debug/net7.0/pizzashop_Services.pdb
+/workspaces/pizzashop/pizzashop_Services/obj/Debug/net7.0/ref/pizzashop_Services.dll
